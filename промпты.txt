@@ -1,0 +1,922 @@
+﻿КАДРЫ ПОЛЯРНОЙ СТАНЦИИ — все промпты
+Курс «Смена на станции». Каждый промпт ниже полный: стилевой токен + сцена + негатив.
+Копировать блоками между линиями. Файл кладите под тем именем, что стоит в заголовке.
+
+ЧЕТЫРЕ ПРАВИЛА, ПРОВЕРЕННЫЕ НА ГЕНЕРАЦИИ:
+1. Первым делайте bg-00-cover и не идите дальше, пока он не устраивает: он подаётся
+   референсом ко всем остальным сценам, иначе сто кадров разъедутся по стилю.
+2. Токена два. Интерьерный прямо запрещает небо, сияние и снег внутри — без этого
+   модель насыпает снег на пол комнаты и вешает сияние над столом. Проверено.
+3. Никаких надписей внутри картинок. Все подписи, цифры и разлиновка — версткой поверх.
+4. Работает z_image (0,15 кредита за кадр). seedream_v4_5 требует платный план.
+
+Модель: 16:9 для сцен, 1:1 для предметов, 2:3 для персонажей.
+
+
+
+==============================================================================
+### ФОНЫ БЛОКОВ КУРСА — 18 КАДРОВ, СВОЙ НА КАЖДЫЙ БЛОК
+==============================================================================
+
+------------------------------------------------------------------------------
+[01] bg-00-cover.jpg   (2048×1152 · JPEG · полярная ночь)
+Обложка · 08:40 — Станция снаружи, свет только в одном окне. Он же кадр-эталон для всей серии.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork, arctic research station, polar night. Palette deep blue-black 0A1420 and steel blue 12263A, ice highlights CFE3EF, warm amber practical lamps F2B441, faint aurora green 5FD3A0. Volumetric light, frost, fine film grain, 16:9, completely deserted, nobody in frame, no text.
+EXTERIOR SCENE: wide establishing shot of a small arctic research station half buried in snow at night, one window glowing warm amber, antenna mast with guy wires, deep drifts, a faint green aurora over the ridge behind, long blue shadows on the snow, vast quiet emptiness
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[02] bg-01-boundaries.jpg   (2048×1152 · JPEG · 4000 K)
+09:00 · Поставь границы смены — Две двери напротив друг друга — работа и жильё. Главная мысль курса, сказанная планировкой.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: interior corridor of a polar station, two doors facing each other across the passage, a large round wall clock above one of them, parkas on hooks, rubber boots below, cold ceiling light in the corridor and warm light spilling under one door
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[03] bg-02-desk.jpg   (2048×1152 · JPEG · 5000 K)
+09:30 · Собери себе место — Пустой стол под лампой — на него игрок будет расставлять мебель в игре «Аппаратная».
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: equipment room of an arctic station, an empty wooden desk under an adjustable articulated lamp, racks of instruments with round dials behind, coiled cables on hooks, thick frost on a small square window, clean cold work light
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[04] bg-03-locker.jpg   (2048×1152 · JPEG · 2700 K)
+10:00 · Выбери, в чём работать — Шкаф, где рядом висят роба и растянутый свитер. Блок про одежду и «скины».
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: open metal locker in a station bunk room, worn wool sweater and canvas work overalls on hangers, folded thermal underwear on the shelf, a small mirror inside the door, a bare warm bulb overhead
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[05] bg-04-board.jpg   (2048×1152 · JPEG · 5000 K)
+10:30 · Разбей смену на слоты — Пустая сетка расписания — на неё ляжет игра «График вахты». Сетка должна быть пустой, без единой надписи.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: magnetic steel board bolted to a riveted wall, an empty schedule grid scratched in chalk lines, blank magnets and a grease pencil resting on the ledge, cold overhead light, straight-on composition
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[06] bg-05-log.jpg   (2048×1152 · JPEG · 2700 K)
+12:00 · Выгрузи из головы в журнал — Стол радиста: журнал, карандаш на верёвке, приёмник. Блок про трекеры.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: radio desk with an open blank logbook, a pencil on a string, a heavy desk microphone, a valve receiver with a glowing tuning dial, an enamel mug, one warm pool of lamplight in an otherwise dark room
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[07] bg-06-outside.jpg   (2048×1152 · JPEG · сияние)
+13:00 · Пауза — Единственный кадр без интерьера. На нём курс на минуту гаснет и не пускает дальше.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork, arctic research station, polar night. Palette deep blue-black 0A1420 and steel blue 12263A, ice highlights CFE3EF, warm amber practical lamps F2B441, faint aurora green 5FD3A0. Volumetric light, frost, fine film grain, 16:9, completely deserted, nobody in frame, no text.
+EXTERIOR SCENE: point of view standing just outside the station door at night, an enormous aurora curtain sweeping across the whole sky, flat snow field, footprints leading away from the door, warm light from the doorway behind, wide calm composition, empty foreground
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[08] bg-07-supply.jpg   (2048×1152 · JPEG · 2700 K)
+14:00 · Спланируй неделю и оставь запас — Склад топлива: запас, который нельзя расходовать под ноль. Здесь живёт правило 10–15 %.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: fuel and supply store room of a polar station, stacked steel barrels and wooden crates, a single hanging bulb swinging slightly, chalk tally marks on the barrels, cold breath visible in the air
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[09] bg-08-shelves.jpg   (2048×1152 · JPEG · 5000 K)
+15:00 · Сложи похожее в один день — Стеллаж, где всё разложено по типам. Блок про группировку задач.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: deep storage shelves seen head-on, crates and boxes sorted strictly by kind, tools hung in neat rows by size, cold blue light, orderly symmetrical composition, one empty slot in the middle row
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[10] bg-09-drift.jpg   (2048×1152 · JPEG · 4000 K)
+15:30 · Разгреби занос — Тамбур, наружную дверь наполовину завалило. Фон игры про неприятную задачу с утра.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: inside the vestibule of a polar station, the outer door half blocked by a wall of packed windblown snow, a shovel leaning against the wall, dim blue polar twilight through the open gap at the top, bare cold lamp inside
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[11] bg-10-mast.jpg   (2048×1152 · JPEG · прожектор)
+16:00 · Загони себя в угол — Обледеневшая мачта: пока не собьёшь лёд, связи нет и всё остальное заблокировано.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork, arctic research station, polar night. Palette deep blue-black 0A1420 and steel blue 12263A, ice highlights CFE3EF, warm amber practical lamps F2B441, faint aurora green 5FD3A0. Volumetric light, frost, fine film grain, 16:9, completely deserted, nobody in frame, no text.
+EXTERIOR SCENE: ice-covered antenna mast against a black sky, thick rime coating the guy wires, station roof below in the corner of the frame, a harsh work floodlight from below throwing the mast into relief, faint aurora low on the horizon
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[12] bg-11-ether.jpg   (2048×1152 · JPEG · 2200 K)
+16:30 · Подбери фон — Приёмник крупно, шкала светится. Блок про фон для монотонной работы.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: close-up of a vintage valve radio receiver on a desk, glowing amber tuning dial with a needle, headphones lying beside it, dark room around, dial light reflected in the varnished wood
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[13] bg-12-ration.jpg   (2048×1152 · JPEG · 2700 K)
+17:30 · Награди себя — Полка НЗ: сгущёнка и шоколад. Награда, которая выдаётся только за закрытую задачу.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: a shelf of ration supplies in a small locker, tins of condensed milk, chocolate bars in foil, a tin of canned meat, a hasp with a small padlock hanging open, warm bulb, cosy cluttered composition
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[14] bg-13-switch.jpg   (2048×1152 · JPEG · 5000→2700 K)
+18:00 · Закрой вахту — Момент, ради которого построен курс: свет переключается с холодного на тёплый.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: electrical panel with a large knife switch and round gauges, the room lit half in cold blue and half in warm amber as the lighting changes over, dark station interior, dust in the beam
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[15] bg-14-mess.jpg   (2048×1152 · JPEG · 2700 K)
+вечер · Отдыхай наоборот — Кают-компания с латунными весами на столе — фон игры «Весы».
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: station mess room in the evening, a long scuffed table with a brass balance scale standing on it, a guitar in the corner, a pull-up bar fixed in the doorway, warm lamps inside, cold blue window behind
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[16] bg-15-passage.jpg   (2048×1152 · JPEG · 4000 K)
+вечер · Меняй обстановку — Переход между модулями — про смену места работы.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork, arctic research station, polar night. Palette deep blue-black 0A1420 and steel blue 12263A, ice highlights CFE3EF, warm amber practical lamps F2B441, faint aurora green 5FD3A0. Volumetric light, frost, fine film grain, 16:9, completely deserted, nobody in frame, no text.
+EXTERIOR SCENE: covered wooden walkway between two station modules at night, snow blowing in through the gaps between the boards, a lit doorway at the far end, steam venting from a pipe, strong perspective down the passage
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[17] bg-16-wall.jpg   (2048×1152 · JPEG · 2400 K)
+выходные · Впиши личные цели — Стена над койкой: фотографии, календарь с зачёркнутыми днями. Личное, не рабочее.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: bunk wall covered with pinned photographs and postcards, a paper wall calendar with days crossed out, a knitted blanket edge below, a small reading lamp clipped to the frame, intimate warm light
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[18] bg-17-sunrise.jpg   (2048×1152 · JPEG · первое солнце)
+финал · Через три месяца — Опорник просит применять техники три месяца — ровно столько длится полярная ночь. Финал курса: первый рассвет.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork, arctic research station, polar night. Palette deep blue-black 0A1420 and steel blue 12263A, ice highlights CFE3EF, warm amber practical lamps F2B441, faint aurora green 5FD3A0. Volumetric light, frost, fine film grain, 16:9, completely deserted, nobody in frame, no text.
+EXTERIOR SCENE: the first sunrise after the polar night, a low orange sun just clearing the horizon over an endless snow field, the station in silhouette on the left, long blue shadows stretching towards the viewer, clear cold sky, hopeful
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### ВАХТЕННЫЙ ЖУРНАЛ
+==============================================================================
+
+------------------------------------------------------------------------------
+[19] scene-log-desk.jpg   (1920×1080 · JPEG)
+Сцена игры — Стол сверху под небольшим углом, свободное поле в центре — туда лягут бланки.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: radio operator desk seen from above at a slight angle, open blank logbook on the left, valve receiver on the right, empty worn wooden surface in the middle of the frame, warm lamplight from the top left, dark edges
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[20] obj-logbook.png   (1024×1024 · PNG α)
+Журнал — Открытый разворот, страницы пустые — строки нарисуем версткой.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: an open logbook with blank ruled pages, cardboard cover, worn corners, a pencil tied to it with string lying across the page
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[21] obj-form-clear.png   (1024×1024 · PNG α)
+Бланк · чистый — Задача, которую записали. Три бланка нужны в одном ракурсе и одном размере.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a single small blank paper radiogram form, slightly creased, clean and dry, lying flat, three quarter top view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[22] obj-form-frost.png   (1024×1024 · PNG α)
+Бланк · подмёрз — Задача, которую держат в голове: детали начали теряться.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same small blank paper form, now with frost crystals creeping in from the edges, the paper damp and stiffening, identical angle and size
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[23] obj-form-iced.png   (1024×1024 · PNG α)
+Бланк · подо льдом — Задача забыта целиком — этот бланк уходит в отчёт «что ты потерял».
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same small paper form completely encased in a block of cloudy ice, edges rounded by frost, unreadable, identical angle and size
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[24] obj-mic.png   (1024×1024 · PNG α)
+Тангента — Кнопка приёма новой радиограммы.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a heavy vintage push-to-talk handheld microphone with a coiled cable, bakelite body, worn metal grille
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[25] obj-mug.png   (1024×1024 · PNG α)
+Кружка — Мелочь для сцены и для награды в другой игре.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a chipped white enamel mug with a blue rim, steam rising, a spoon inside
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### ГРАФИК ВАХТЫ
+==============================================================================
+
+------------------------------------------------------------------------------
+[26] scene-board.jpg   (1920×1080 · JPEG)
+Сцена игры — Доска почти во весь кадр, строго фронтально, сетка пустая.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: a large magnetic steel board filling the frame straight on, empty grid scratched in chalk, riveted metal frame, a narrow ledge along the bottom with a grease pencil, even cold light, no writing anywhere
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[27] obj-magnet-radio.png   (1024×1024 · PNG α)
+Магнит · связь — Тип задач «созвоны». Все магниты — одна форма, разный предмет внутри.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a round magnet disc of dark enamel with a small microphone symbol embossed in relief on it, worn edges, straight-on view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[28] obj-magnet-wrench.png   (1024×1024 · PNG α)
+Магнит · ремонт — Тип «руками»: чинить, налаживать.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same round enamel magnet disc, with a small embossed wrench in relief, identical size and angle
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[29] obj-magnet-balloon.png   (1024×1024 · PNG α)
+Магнит · наблюдения — Тип «рутина по расписанию».
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same round enamel magnet disc, with a small embossed weather balloon in relief, identical size and angle
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[30] obj-magnet-paper.png   (1024×1024 · PNG α)
+Магнит · тексты — Тип «писать и считать».
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same round enamel magnet disc, with a small embossed sheet of paper in relief, identical size and angle
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[31] obj-magnet-break.png   (1024×1024 · PNG α)
+Магнит · перерыв — Тёплый акцент, чтобы перерывы читались в сетке издалека.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same round magnet disc but in warm amber enamel, with a small embossed steaming mug in relief, identical size and angle
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[32] obj-magnet-alarm.png   (1024×1024 · PNG α)
+Магнит · форс-мажор — Прилетает в 14:20 без спроса.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same round magnet disc in chipped red enamel, with a small embossed alarm bell in relief, identical size and angle
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[33] obj-grease-pencil.png   (1024×1024 · PNG α)
+Карандаш — Курсор игры и мелочь для доски.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a worn grease pencil with paper wrapping partly peeled back, blunt tip, lying at a slight diagonal
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### УТРЕННИЙ ЗАНОС
+==============================================================================
+
+------------------------------------------------------------------------------
+[34] scene-vestibule.jpg   (1920×1080 · JPEG)
+Сцена игры — Тамбур изнутри, дверь по центру, места под сугроб пусто.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: inside a station vestibule looking straight at the closed outer door, bare boards, a shovel hanging on the wall to the left, a single cold lamp above, the doorway free of snow, empty floor in front of the door
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[35] obj-drift-1.png   (1024×1024 · PNG α)
+Сугроб · стадия 1 — Утро, порог только присыпало.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a low wedge of packed windblown snow across a doorway threshold, crisp wind-carved surface, front view, wide and flat
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[36] obj-drift-2.png   (1024×1024 · PNG α)
+Сугроб · стадия 2 — Отложил на час.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same wedge of packed snow but knee high against the door, same camera position and width, wind-carved ridges
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[37] obj-drift-3.png   (1024×1024 · PNG α)
+Сугроб · стадия 3 — Отложил до обеда.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same snow drift now chest high and pressing against the door, same camera position and width, hard packed surface with ice crust
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[38] obj-drift-4.png   (1024×1024 · PNG α)
+Сугроб · стадия 4 — Отложил на весь день: выйти уже нельзя.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same drift now covering the entire doorway to the top, only a thin dark gap left at the very top, same camera position and width, dense blue-white ice crust
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[39] obj-shovel.png   (1024×1024 · PNG α)
+Лопата — Курсор и кнопка действия.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a worn wooden-handled snow shovel with a dented aluminium blade, standing at a slight angle
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[40] obj-snow-chunks.png   (1024×1024 · PNG α)
+Комья снега — Частицы при каждом взмахе — россыпь на прозрачном фоне.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a scatter of broken snow chunks and powder of assorted sizes arranged apart from each other, sharp edges, no ground under them
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### ЭФИР
+==============================================================================
+
+------------------------------------------------------------------------------
+[41] scene-radio-room.jpg   (1920×1080 · JPEG)
+Сцена игры — Приёмник слева, свободное место справа под бланк и поля ввода.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: a valve radio receiver standing on the left third of a desk, its tuning dial glowing, headphones hooked over the corner, the right half of the desk empty and clear, dark room, warm rim light along the receiver
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[42] obj-receiver.png   (1024×1024 · PNG α)
+Приёмник — Отдельно от сцены — его шкала будет живой.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a vintage valve radio receiver, wooden case, round glowing tuning scale, two large bakelite knobs, front three quarter view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[43] obj-knob.png   (1024×1024 · PNG α)
+Ручка настройки — Крутится мышью, ловит станции.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a single large bakelite radio tuning knob with a metal pointer and ribbed edge, front view, isolated
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[44] obj-headphones.png   (1024×1024 · PNG α)
+Наушники — Кнопка включения звука.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: heavy vintage bakelite headphones with a metal headband and cloth cable, lying flat, three quarter view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[45] obj-weather-form.png   (1024×1024 · PNG α)
+Бланк метеосводки — Та самая монотонная задача. Пустой, без цифр — цифры расставит игра.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a blank meteorological report form with empty printed boxes and columns, no handwriting, slightly yellowed paper, lying flat, top down view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[46] sheet-ether-good.png   (2048×1536 · PNG α)
+Лист иконок · подходит — Сетка 3×2, режется скриптом. Порядок: обзор книг · разбор фильма · конспиролог · турецкий сериал · стрим «учимся вместе» · рассказ про космос.
+------------------------------------------------------------------------------
+STYLE: icon sheet on transparent background, painterly semi-realistic miniatures, consistent size and lighting in every cell, cold blue-grey objects with a warm amber accent, even spacing, no frames, no text, no labels.\nSHEET: a 3 by 2 grid of six small icons with generous even spacing: an open book with a bookmark, a film clapperboard with a cracked lens, a tinfoil pyramid over an old TV set, a bunch of roses beside a heart locket, a desk lamp over an open notebook, a small planet with a ring
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[47] sheet-ether-bad.png   (2048×1536 · PNG α)
+Лист иконок · не подходит — Тот же размер клетки и тот же свет, что у первого листа. Порядок: летсплей · клипы · аниме · кино · шортсы · обзор техники.
+------------------------------------------------------------------------------
+STYLE: icon sheet on transparent background, painterly semi-realistic miniatures, consistent size and lighting in every cell, cold blue-grey objects with a warm amber accent, even spacing, no frames, no text, no labels.\nSHEET: a 3 by 2 grid of six small icons with generous even spacing, identical cell size and lighting to the previous sheet: a game controller, a musical note with headphones, a wide-eyed cartoon face mask, a cinema ticket pair, a vertical phone in portrait orientation, an opened cardboard box with a gadget in it
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### МАЧТА
+==============================================================================
+
+------------------------------------------------------------------------------
+[48] scene-mast-night.jpg   (1920×1080 · JPEG)
+Сцена игры — Мачта по центру, снизу вверх, вокруг темнота — вся сцена держится на прожекторе.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork, arctic research station, polar night. Palette deep blue-black 0A1420 and steel blue 12263A, ice highlights CFE3EF, warm amber practical lamps F2B441, faint aurora green 5FD3A0. Volumetric light, frost, fine film grain, 16:9, completely deserted, nobody in frame, no text.
+EXTERIOR SCENE: looking up at an antenna mast from its base at night, the mast running up the centre of the frame, guy wires spreading to the corners, a work floodlight at the bottom throwing hard light upward, black sky, snow crust below
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[49] obj-ice-1.png   (1024×1024 · PNG α)
+Наледь · полная — Три стадии в одном ракурсе — накладываются на мачту и тают по мере ударов.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a thick sleeve of rime ice shaped around a vertical metal mast section, opaque milky white, rough cauliflower surface, front view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[50] obj-ice-2.png   (1024×1024 · PNG α)
+Наледь · сбита наполовину
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the same sleeve of rime ice but half broken away with sharp fracture edges, the bare metal showing through in places, identical angle and size
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[51] obj-ice-3.png   (1024×1024 · PNG α)
+Наледь · остатки
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: only thin remnants of rime ice clinging to the metal in a few spots, wet glinting edges, identical angle and size
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[52] obj-hammer.png   (1024×1024 · PNG α)
+Молоток — Кнопка удара.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a worn rubber-headed mallet with a taped wooden handle, held at a slight diagonal, isolated
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[53] obj-lock.png   (1024×1024 · PNG α)
+Замок — Висит на каждой заблокированной задаче, пока мачта во льду.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a small steel padlock closed on a hasp, frost on the shackle, front view, isolated
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### ВЕСЫ
+==============================================================================
+
+------------------------------------------------------------------------------
+[54] scene-mess-table.jpg   (1920×1080 · JPEG)
+Сцена игры — Стол кают-компании фронтально, центр свободен под весы.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: a long scuffed wooden mess table shot straight on from across it, warm lamp above, mugs and a kettle pushed to the far edges, the centre of the table completely clear, dark room behind
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[55] obj-scale-frame.png   (1024×1024 · PNG α)
+Весы · станина — Без чаш и без коромысла — они отдельно.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the column and heavy base of an antique brass balance scale without its beam or pans, tarnished metal, front view, isolated
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[56] obj-scale-beam.png   (1024×1024 · PNG α)
+Весы · коромысло — Крутится вокруг центра.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: the beam of an antique brass balance scale alone, horizontal, with hooks at both ends and a pointer at the centre, tarnished brass, front view, isolated
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[57] obj-scale-pan.png   (1024×1024 · PNG α)
+Весы · чаша — Один файл на обе чаши, вторая зеркалится кодом.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a single shallow brass pan of a balance scale hanging on three thin chains, tarnished, front view, isolated
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[58] sheet-work-icons.png   (2048×1536 · PNG α)
+Лист иконок · какой была работа — Сетка 3×2: ответственная · малоподвижная · экранная · монотонная · разговорная · срочная.
+------------------------------------------------------------------------------
+STYLE: icon sheet on transparent background, painterly semi-realistic miniatures, consistent size and lighting in every cell, cold blue-grey objects with a warm amber accent, even spacing, no frames, no text, no labels.\nSHEET: a 3 by 2 grid of six small icons with generous even spacing: a stamped official seal, a chair seen from the side, a glowing monitor, a row of identical bolts, two speech bubbles overlapping, a ringing alarm clock
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[59] sheet-rest-icons.png   (2048×2048 · PNG α)
+Лист иконок · чем отдыхать — Сетка 3×3, та же клетка и свет: бег · турник · прогулка · готовка · мастерить руками · разговор · сон · сериал · музыка.
+------------------------------------------------------------------------------
+STYLE: icon sheet on transparent background, painterly semi-realistic miniatures, consistent size and lighting in every cell, cold blue-grey objects with a warm amber accent, even spacing, no frames, no text, no labels.\nSHEET: a 3 by 3 grid of nine small icons with generous even spacing, identical cell size and lighting to the previous sheet: a running boot, a horizontal bar, a snowy footpath, a cooking pot with steam, a hand plane with wood shavings, two mugs clinking, a folded pillow, a small television, a guitar
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### АППАРАТНАЯ
+==============================================================================
+
+------------------------------------------------------------------------------
+[60] scene-empty-corner.jpg   (1920×1080 · JPEG)
+Пустой угол — Голые стены и пол — холст для расстановки. Свет ровный, без выраженного источника, чтобы не спорил с лампой игрока.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: an empty corner of a polar station module, bare plywood walls with rivets, worn linoleum floor, one small frosted window high on the wall, no furniture at all, flat even light, isometric three quarter view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[61] obj-desk.png   (1024×1024 · PNG α)
+Стол — Все предметы этой игры — в одной изометрии, вид сверху-сбоку под 30°.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a plain wooden work desk with a scratched top and one drawer, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[62] obj-chair.png   (1024×1024 · PNG α)
+Кресло
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a worn office chair with a wooden seat and metal frame, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[63] obj-monitor.png   (1024×1024 · PNG α)
+Большой монитор — Экран выключен: свечение рисуем кодом.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a large monitor on a stand with a dark switched-off screen, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[64] obj-lamp-arm.png   (1024×1024 · PNG α)
+Лампа на кронштейне — Ключевой предмет игры: её температуру игрок и крутит. Колба без свечения.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: an articulated metal desk lamp on a hinged arm with a conical shade, bulb not lit, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[65] obj-shelf.png   (1024×1024 · PNG α)
+Полка
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a simple wall shelf with a few books and a tin box on it, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[66] obj-bunk.png   (1024×1024 · PNG α)
+Койка — Отвлекающий фактор: рядом со столом роняет счёт.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a narrow metal bunk bed with a rumpled blanket and a pillow, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[67] obj-heater.png   (1024×1024 · PNG α)
+Обогреватель
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a squat cast iron electric heater with a coiled element and a mesh guard, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[68] obj-cable-tray.png   (1024×1024 · PNG α)
+Кабель-канал — Мелочь, которая даёт очки за порядок.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a length of metal cable tray with bundled cables neatly strapped inside, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[69] obj-plant-lamp.png   (1024×1024 · PNG α)
+Зелень под фитолампой — На зимовке это правда роскошь. Даёт очки за «потрогай траву».
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a small tray of green seedlings under a narrow grow lamp fixture, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[70] obj-radio-set.png   (1024×1024 · PNG α)
+Приёмник — Отвлекающий фактор или фон — зависит от того, что игрок поставит рядом.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a small portable valve radio set with a fabric speaker grille, isometric three quarter view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[71] obj-rug.png   (1024×1024 · PNG α)
+Половик — Делит угол на рабочий и жилой — тот самый приём про границы.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a worn woven rug with a faded geometric pattern, lying flat, isometric view from above at thirty degrees
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### СКИНЫ
+==============================================================================
+
+------------------------------------------------------------------------------
+[72] char-you-f-pyjama.png   (1024×1536 · PNG α)
+Термобельё и плед — Тепло, удобно, работать невозможно.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same young woman from the character sheet, wearing baggy thermal underwear and a blanket over her shoulders, slippers, sleepy posture, arms wrapped around herself
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[73] char-you-f-sweater.png   (1024×1536 · PNG α)
+Растянутый свитер — Компромисс, в котором большинство и живёт.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same young woman, wearing a stretched-out oversized wool sweater and soft trousers, relaxed neutral posture, hands in pockets
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[74] char-you-f-overall.png   (1024×1536 · PNG α)
+Рабочая роба — Верный ответ: в этом можно выйти к людям.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same young woman, wearing clean canvas work overalls over a checked shirt, sleeves rolled, upright confident posture
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[75] char-you-f-parka.png   (1024×1536 · PNG α)
+Парка — Для сцен наружу: занос, мачта, пауза под сиянием.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same young woman, wearing a heavy fur-trimmed parka with the hood down, mittens hanging on cords, snow dusting the shoulders
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### НЕПРИКОСНОВЕННЫЙ ЗАПАС
+==============================================================================
+
+------------------------------------------------------------------------------
+[76] scene-ration-locker.jpg   (1920×1080 · JPEG)
+Сцена игры — Шкафчик фронтально, дверца приоткрыта, полки видны.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: a small wall ration locker shot straight on with its door ajar, two shelves inside, warm bulb light spilling out, dark wall around, the shelves sparsely stocked
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[77] obj-condensed-milk.png   (1024×1024 · PNG α)
+Сгущёнка — Главная награда полярника.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a dented tin of condensed milk with a blank blue and white label, two triangular punch holes in the lid, three quarter view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[78] obj-chocolate.png   (1024×1024 · PNG α)
+Шоколад
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a bar of dark chocolate in torn foil with two squares broken off, three quarter view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[79] obj-canned.png   (1024×1024 · PNG α)
+Консервы
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a plain tin can of preserved meat with a blank label and a key soldered to the lid, three quarter view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[80] obj-hasp-key.png   (1024×1024 · PNG α)
+Замок и ключ — Открывается только с закрытой задачей в руке.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a small brass padlock hanging open on a hasp with a key still in it, front view, isolated
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### ВЫЙДИ НА СВЯЗЬ
+==============================================================================
+
+------------------------------------------------------------------------------
+[81] scene-mic-closeup.jpg   (1920×1080 · JPEG)
+Сцена игры — Тангента крупно, палец на кнопке, за ней — размытая рубка.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: extreme close-up of a hand holding a push-to-talk microphone with the thumb resting on the button, the radio room out of focus behind, warm dial glow, shallow depth of field
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[82] char-face-chief.png   (1024×1024 · PNG α)
+Портрет · начальник смены — Четыре погрудных портрета в одном ракурсе и масштабе — станут кружками выбора.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: bust portrait of a weathered woman in her fifties with a grey braid and a thick sweater, calm demanding look, plain three quarter view, head and shoulders only
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[83] char-face-friend.png   (1024×1024 · PNG α)
+Портрет · приятель
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: bust portrait of a cheerful bearded man in his thirties in a knitted hat and headphones round his neck, plain three quarter view, head and shoulders only, identical framing
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[84] char-face-crush.png   (1024×1024 · PNG α)
+Портрет · тот, кто нравится — Самый сильный вариант по опорнику — и это должно читаться по лицу.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: bust portrait of a smiling young person with short dark hair and a headset, warm friendly expression, plain three quarter view, head and shoulders only, identical framing
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[85] char-face-crew.png   (1024×1024 · PNG α)
+Портрет · вся смена — Групповой кружок: обещание в общий чат.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: bust portrait of three people crowded into one frame shoulder to shoulder in winter clothes, looking at the viewer, plain view, heads and shoulders only, identical framing
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### РАСПОРЯДОК ВАХТЫ
+==============================================================================
+
+------------------------------------------------------------------------------
+[86] scene-plan-table.jpg   (1920×1080 · JPEG)
+Сцена — Стол с бланком под лампой, место в центре свободно под поля ввода.
+------------------------------------------------------------------------------
+STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.
+INTERIOR SCENE: a desk under a lamp seen from directly above, a large blank printed form lying in the centre with empty boxes and no writing, a pencil and a rubber stamp beside it, dark wood around the edges
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[87] obj-stamp.png   (1024×1024 · PNG α)
+Штамп — Печать, которая ставится, когда распорядок прошёл проверку.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a wooden handled rubber stamp standing upright next to a red ink pad, the rubber face blank, three quarter view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[88] obj-form-plan.png   (1024×1024 · PNG α)
+Бланк распорядка — Пустой, с рамками — строки нарисуем версткой.
+------------------------------------------------------------------------------
+STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: a large blank printed schedule form with empty ruled boxes and columns, no handwriting, slightly yellowed paper, top down view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### КТО НА СТАНЦИИ
+==============================================================================
+
+------------------------------------------------------------------------------
+[89] sheet-char-you-f.png   (2048×2048 · PNG α)
+Лист · игрок (женский вариант) — Три ракурса плюс мимика. С него снимаются все позы ниже.
+------------------------------------------------------------------------------
+STYLE: icon sheet on transparent background, painterly semi-realistic miniatures, consistent size and lighting in every cell, cold blue-grey objects with a warm amber accent, even spacing, no frames, no text, no labels.\nSHEET: character sheet of one young woman about twenty eight, short practical hair, freckles, canvas work overalls over a checked shirt: full body front view, three quarter view and side view in a row, plus four head close-ups below showing neutral, talking, tired and pleased, consistent proportions and identical height across all views
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[90] sheet-char-you-m.png   (2048×2048 · PNG α)
+Лист · игрок (мужской вариант) — Тот же костюм и тот же рост, чтобы позы были взаимозаменяемы.
+------------------------------------------------------------------------------
+STYLE: icon sheet on transparent background, painterly semi-realistic miniatures, consistent size and lighting in every cell, cold blue-grey objects with a warm amber accent, even spacing, no frames, no text, no labels.\nSHEET: character sheet of one young man about twenty eight, cropped hair, stubble, canvas work overalls over a checked shirt: full body front view, three quarter view and side view in a row, plus four head close-ups below showing neutral, talking, tired and pleased, consistent proportions and identical height across all views
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[91] sheet-char-chief.png   (2048×2048 · PNG α)
+Лист · старший смены — Голос опыта. Её реплики — заметки на полях курса.
+------------------------------------------------------------------------------
+STYLE: icon sheet on transparent background, painterly semi-realistic miniatures, consistent size and lighting in every cell, cold blue-grey objects with a warm amber accent, even spacing, no frames, no text, no labels.\nSHEET: character sheet of one weathered woman in her fifties, grey hair in a braid, deep laugh lines, a stretched wool sweater and a mug in hand: full body front view, three quarter view and side view in a row, plus four head close-ups below showing neutral, talking, sceptical and approving, consistent proportions and identical height across all views
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[92] sheet-char-dog.png   (2048×2048 · PNG α)
+Лист · пёс станции — Лайка. Маскот вместо жабы из опорника: подсказки, шутки и приглашение выйти на паузу.
+------------------------------------------------------------------------------
+STYLE: icon sheet on transparent background, painterly semi-realistic miniatures, consistent size and lighting in every cell, cold blue-grey objects with a warm amber accent, even spacing, no frames, no text, no labels.\nSHEET: character sheet of one husky-type sled dog with a thick grey and white coat and one ear slightly bent: side view, front view and three quarter view in a row, plus four poses below sitting, lying down, head tilted and barking, consistent size across all views
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[93] char-you-f-idle.png   (1024×1536 · PNG α)
+Игрок · спокойно — Базовая поза для диалогов. Ноги на одной высоте во всех кадрах, иначе персонаж будет прыгать при смене.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same young woman from the character sheet, standing relaxed with arms at her sides, neutral expression, mouth closed
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[94] char-you-f-talk.png   (1024×1536 · PNG α)
+Игрок · говорит — Показывается во время реплики.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same young woman, mouth open mid-sentence, one hand raised in a small gesture, identical height and foot position
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[95] char-you-f-blink.png   (1024×1536 · PNG α)
+Игрок · моргает — Подставляется в паузах, оживляет статичную сцену.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same young woman, eyes closed, calm face, arms at her sides, identical height and foot position
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[96] char-you-f-tired.png   (1024×1536 · PNG α)
+Игрок · вымотан — Появляется, когда игрок переработал — визуальный штраф вместо цифры.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same young woman, shoulders dropped, head slightly lowered, rubbing her eyes with one hand, identical height and foot position
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[97] char-you-f-glad.png   (1024×1536 · PNG α)
+Игрок · доволен — Финал удачного дня и награда из НЗ.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same young woman, standing straight, small satisfied smile, hands on hips, identical height and foot position
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[98] char-chief-idle.png   (1024×1536 · PNG α)
+Старший смены · спокойно — Полный набор состояний повторяется и для мужского варианта игрока — по тем же формулировкам.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same woman in her fifties from her character sheet, standing with a mug in one hand, calm attentive expression
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[99] char-chief-talk.png   (1024×1536 · PNG α)
+Старший смены · говорит
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same woman in her fifties, mouth open mid-sentence, gesturing with the mug, identical height and foot position
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[100] char-chief-sceptic.png   (1024×1536 · PNG α)
+Старший смены · сомневается — Реакция на переработку и на пустой график.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same woman in her fifties, one eyebrow raised, arms folded, sceptical look, identical height and foot position
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[101] char-dog-sit.png   (1024×1024 · PNG α)
+Пёс · сидит — Базовый кадр для заметок на полях.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same husky-type dog from its sheet, sitting, side view, looking towards the viewer, ears up
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[102] char-dog-tilt.png   (1024×1024 · PNG α)
+Пёс · склонил голову — Для подсказок и вопросов.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same dog, sitting with its head tilted to one side, identical size and view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[103] char-dog-lying.png   (1024×1024 · PNG α)
+Пёс · лежит — Вечерние блоки, кают-компания.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same dog, lying down with its head on its paws, eyes half closed, identical size and view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[104] char-dog-bark.png   (1024×1024 · PNG α)
+Пёс · зовёт гулять — Блок паузы: единственный момент, когда пёс перебивает курс.
+------------------------------------------------------------------------------
+STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: the same dog, standing with front legs low and rear up in a play bow, mouth open barking, tail up, identical size and view
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+
+==============================================================================
+### ИНЕЙ, СИЯНИЕ, СНЕГ
+==============================================================================
+
+------------------------------------------------------------------------------
+[105] fx-frost-edges.png   (1920×1080 · PNG α)
+Иней по краям кадра — Кладётся на все рабочие блоки, центр остаётся чистым под текст.
+------------------------------------------------------------------------------
+STYLE: overlay texture on transparent background, painterly, subtle, low contrast, monochrome cold blue-white, no subject, no text.\nOVERLAY: "
+};
+
+/* ── данные ────────────────────────────────────────── */
+const DATA = [
+{
+  id:"start", nav:"Как работать", eyebrow:["Порядок","прочитать до первой генерации"],
+  title:"Сначала соберите эталон, потом всё остальноеa frame of delicate frost crystals growing inward from the edges of a rectangle, dense at the corners and thinning to nothing towards the centre, the middle completely clear, white on transparent
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[106] fx-aurora.png   (2048×1024 · PNG α)
+Лента сияния — Акцент на переходах между блоками и на паузе. Единственный оверлей не в холодной гамме.
+------------------------------------------------------------------------------
+STYLE: overlay texture on transparent background, painterly, subtle, low contrast, monochrome cold blue-white, no subject, no text.\nOVERLAY: "
+};
+
+/* ── данные ────────────────────────────────────────── */
+const DATA = [
+{
+  id:"start", nav:"Как работать", eyebrow:["Порядок","прочитать до первой генерации"],
+  title:"Сначала соберите эталон, потом всё остальноеa single soft ribbon of aurora light, pale green fading to teal at the edges, vertical streaks within it, soft glow, fully transparent around it
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[107] fx-snow.png   (1024×1024 · PNG α)
+Снежная крошка — Бесшовный тайл, гоняется анимацией. Разный размер частиц, иначе видна сетка.
+------------------------------------------------------------------------------
+STYLE: overlay texture on transparent background, painterly, subtle, low contrast, monochrome cold blue-white, no subject, no text.\nOVERLAY: "
+};
+
+/* ── данные ────────────────────────────────────────── */
+const DATA = [
+{
+  id:"start", nav:"Как работать", eyebrow:["Порядок","прочитать до первой генерации"],
+  title:"Сначала соберите эталон, потом всё остальноеa seamless tile of scattered snow particles of varying sizes on transparent background, soft round grains and a few sharp flakes, evenly distributed with no visible clusters or rows
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[108] fx-condensation.png   (1920×1080 · PNG α)
+Конденсат на стекле — Для кадров, снятых будто из окна модуля.
+------------------------------------------------------------------------------
+STYLE: overlay texture on transparent background, painterly, subtle, low contrast, monochrome cold blue-white, no subject, no text.\nOVERLAY: "
+};
+
+/* ── данные ────────────────────────────────────────── */
+const DATA = [
+{
+  id:"start", nav:"Как работать", eyebrow:["Порядок","прочитать до первой генерации"],
+  title:"Сначала соберите эталон, потом всё остальноеa layer of condensation droplets and runs on a glass pane, some drops sliding down leaving trails, uneven density, transparent between the droplets
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[109] fx-grain.png   (1024×1024 · PNG α)
+Зерно — Бесшовный тайл поверх всего курса — он же прячет швы генерации.
+------------------------------------------------------------------------------
+STYLE: overlay texture on transparent background, painterly, subtle, low contrast, monochrome cold blue-white, no subject, no text.\nOVERLAY: "
+};
+
+/* ── данные ────────────────────────────────────────── */
+const DATA = [
+{
+  id:"start", nav:"Как работать", eyebrow:["Порядок","прочитать до первой генерации"],
+  title:"Сначала соберите эталон, потом всё остальноеa seamless fine film grain texture, monochrome, very low contrast, no pattern or banding
+--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry
+
+------------------------------------------------------------------------------
+[+] bg-18-hail.jpg   (2048×1152 · JPEG · 2400 K)
+16:00 · Дай слово
+------------------------------------------------------------------------------
+Интерьерный токен + SCENE: radio room of the station seen close, a hand-held microphone on a coiled cord lying on the desk beside a valve transceiver, glowing tuning scale, a wall map with pins above, an open notebook, one warm lamp overhead, nobody in frame
+
+------------------------------------------------------------------------------
+[+] bg-19-porch.jpg   (2048×1152 · JPEG · сияние)
+вечер · Делай паузы
+------------------------------------------------------------------------------
+Экстерьерный токен + SCENE: the porch of a polar station at night seen from a few steps away, three metal steps swept clear of snow, a handrail, a lamp above the door casting a warm pool of light on the snow, footprints going in a small loop and back to the door, faint aurora low over the horizon

@@ -1,0 +1,368 @@
+<title>Смена на станции</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --night:#0A1420; --panel:#0E1B27; --panel-2:#122333;
+    --line:#1E3346; --line-soft:#17293a;
+    --ice:#D6E7F2; --dim:#96ADC0; --faint:#6B8299;
+    --amber:#F2B441; --aurora:#5FD3A0; --cold:#BFD9E8;
+    --maxw:1000px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--night); color:var(--ice);
+    font-family:"Golos Text","Segoe UI",system-ui,sans-serif;
+    font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background:
+      radial-gradient(110% 70% at 82% -8%, rgba(95,211,160,.09), transparent 58%),
+      radial-gradient(80% 55% at 4% 104%, rgba(242,180,65,.06), transparent 60%);
+  }
+  .wrap{position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:0 26px 96px}
+  .eyebrow{
+    font-family:"JetBrains Mono",ui-monospace,monospace; font-size:11px;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--faint);
+  }
+  header{border-bottom:1px solid var(--line); background:linear-gradient(180deg,rgba(18,35,51,.8),rgba(10,20,32,0))}
+  .hin{position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:30px 26px 26px}
+  h1{
+    font-family:"Oswald","Arial Narrow",sans-serif; font-weight:600; text-transform:uppercase;
+    letter-spacing:.04em; font-size:clamp(32px,6vw,54px); line-height:1; margin:.26em 0 .22em;
+  }
+  h1 span{color:var(--dim); font-weight:400}
+  .thesis{max-width:62ch; font-size:18px; color:var(--ice); margin:0}
+  .thesis b{color:var(--amber); font-weight:500}
+  h2{
+    font-family:"Oswald",sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:.03em;
+    font-size:clamp(20px,2.6vw,26px); margin:0 0 6px;
+  }
+  section{margin-top:58px; padding-top:20px; border-top:1px solid var(--line)}
+  section > .eyebrow{margin-bottom:6px}
+  .lead{max-width:66ch; color:var(--dim); margin:0 0 26px}
+  p{max-width:66ch}
+
+  /* ── лента вахты ─────────────────────────────── */
+  .tl{display:grid; grid-template-columns:78px 1fr; column-gap:20px}
+  .tl > .t{
+    font-family:"JetBrains Mono",monospace; font-size:13px; color:var(--cold);
+    font-variant-numeric:tabular-nums; padding-top:15px; letter-spacing:-.02em;
+  }
+  .tl > .t.word{font-size:11.5px; color:var(--faint); letter-spacing:.06em; text-transform:uppercase}
+  .tl > .b{
+    border-left:1px solid var(--line-soft); padding:14px 0 14px 22px; position:relative;
+  }
+  .tl > .b::before{
+    content:""; position:absolute; left:-4px; top:22px; width:7px; height:7px;
+    border-radius:50%; background:var(--line); border:1px solid var(--night);
+  }
+  .tl > .b.play::before{background:var(--aurora)}
+  .tl > .b.key::before{background:var(--amber); width:9px; height:9px; left:-5px}
+  .tl h3{
+    font-family:"Golos Text",sans-serif; font-weight:600; font-size:17px; margin:0 0 2px;
+  }
+  .tl p{margin:0; color:var(--dim); font-size:15px; max-width:64ch}
+  .tl .g{
+    display:inline-block; margin-top:7px; font-family:"JetBrains Mono",monospace; font-size:11px;
+    letter-spacing:.05em; color:var(--aurora); border:1px solid rgba(95,211,160,.35);
+    border-radius:99px; padding:2px 10px;
+  }
+  .tl .b.key h3{color:var(--amber)}
+
+  /* ── игры ────────────────────────────────────── */
+  .games{display:flex; flex-direction:column; gap:12px}
+  .game{background:var(--panel); border:1px solid var(--line-soft); border-radius:3px; padding:16px 18px}
+  .game .top{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:8px}
+  .game h3{font-family:"Oswald",sans-serif; font-weight:500; text-transform:uppercase;
+    letter-spacing:.03em; font-size:19px; margin:0}
+  .from{font-size:13.5px; color:var(--faint)}
+  .game dl{display:grid; grid-template-columns:minmax(96px,auto) 1fr; gap:6px 16px; margin:0}
+  .game dt{
+    font-family:"JetBrains Mono",monospace; font-size:10.5px; letter-spacing:.07em;
+    text-transform:uppercase; color:var(--faint); padding-top:4px;
+  }
+  .game dd{margin:0; color:var(--dim); font-size:15px}
+  .game dd b{color:var(--ice); font-weight:500}
+  .game dd.lose{color:var(--ice)}
+  @media (max-width:640px){
+    .game dl{grid-template-columns:1fr; gap:2px}
+    .game dt{padding-top:9px}
+    .tl{grid-template-columns:58px 1fr; column-gap:12px}
+  }
+
+  /* ── ходы ────────────────────────────────────── */
+  .moves{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px}
+  .move{border-left:2px solid var(--amber); padding:2px 0 2px 16px}
+  .move h3{font-family:"Golos Text",sans-serif; font-size:16px; font-weight:600; margin:0 0 3px}
+  .move p{margin:0; color:var(--dim); font-size:14.5px}
+
+  .cast{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
+  .who{background:var(--panel); border:1px solid var(--line-soft); border-radius:3px; padding:14px 16px}
+  .who h3{font-size:16px; margin:0 0 3px}
+  .who p{margin:0; color:var(--dim); font-size:14.5px}
+
+  ul{max-width:66ch; padding-left:20px; color:var(--dim)}
+  li{margin-bottom:7px}
+  li b, p b{color:var(--ice); font-weight:500}
+  code{font-family:"JetBrains Mono",monospace; font-size:13px; color:var(--cold)}
+  .note{
+    border-left:2px solid var(--aurora); background:rgba(95,211,160,.05);
+    padding:12px 16px; margin-top:22px; max-width:72ch; color:var(--dim); border-radius:0 3px 3px 0;
+  }
+  footer{margin-top:60px; padding-top:16px; border-top:1px solid var(--line); color:var(--faint); font-size:14px}
+</style>
+
+<header><div class="hin">
+  <div class="eyebrow">Курс по опорнику «Работа на удалёнке»</div>
+  <h1>Смена <span>на станции</span></h1>
+  <p class="thesis">Курс проходит как одна вахта: часы в шапке идут с 08:40, в 13:00 занятие само уходит на паузу, в 18:00 смена закрывается — а материал про то, как не сгорать, начинается уже вечером. <b>На зимовке, как и на удалёнке, день не заканчивается сам. Границу ставишь ты.</b></p>
+</div></header>
+
+<div class="wrap">
+
+<section style="border-top:none; margin-top:34px; padding-top:0">
+  <div class="eyebrow">Почему станция</div>
+  <h2>Метафора взята из самого опорника</h2>
+  <p class="lead">Не придумана сверху ради красоты — она уже лежит в тексте, и поэтому оформление преподаёт вместе с материалом.</p>
+  <ul>
+    <li>Опорник советует <b>сменить деятельность на полярную</b> — курс поймал это слово буквально.</li>
+    <li>Он требует <b>холодный свет 4000–5000 K</b>: на станции это не совет по дизайну, а условие, при котором вообще можно работать в темноте.</li>
+    <li>Он заканчивается просьбой <b>применять техники три месяца</b> — ровно столько длится полярная ночь, и финалом курса встаёт первое солнце.</li>
+    <li>Зимовка — это работа и жизнь в одном модуле, без естественных границ дня. То же самое, что удалёнка, только честнее.</li>
+  </ul>
+  <div class="note">Сеттинг — рамка, советы внутри остаются буквальными. В игре «Эфир» на радиошкале ловятся настоящие летсплеи, аниме и обзоры книг из опорника, а не выдуманные передачи: списки «подходит / не подходит» должны работать в реальной жизни, а не только на станции.</div>
+</section>
+
+<section>
+  <div class="eyebrow">Каркас · 18 блоков</div>
+  <h2>Курс идёт по часам вахты</h2>
+  <p class="lead">Заголовки — во втором лице и в повелительном наклонении, без ярлыков-топиков над ними. Между блоками стоят связки, объясняющие, зачем следующий кусок. Область чтения не смещается: одна колонка по центру с одинаковыми полями, во всю ширину разворачиваются только игры.</p>
+
+  <div class="tl">
+    <div class="t">08:40</div>
+    <div class="b"><h3>Обложка</h3><p>Станция снаружи, свет в одном окне. Курс ещё не начался, ноутбук закрыт.</p></div>
+
+    <div class="t">09:00</div>
+    <div class="b key"><h3>Поставь границы смены</h3><p>Рабочий график: сколько часов, во сколько начало и конец. Главный блок курса — с него всё держится.</p></div>
+
+    <div class="t">09:30</div>
+    <div class="b play"><h3>Собери себе место</h3><p>Мебель, свет, отвлекающие факторы. Здесь же ручка кельвинов: 2000 → 6500 K.</p><span class="g">Игра · Аппаратная</span></div>
+
+    <div class="t">10:00</div>
+    <div class="b play"><h3>Выбери, в чём работать</h3><p>Одежда формирует самоощущение. Опорник прямо говорит про «скины» — курс ловит его на слове.</p><span class="g">Игра · Скины</span></div>
+
+    <div class="t">10:30</div>
+    <div class="b play"><h3>Разбей смену на слоты</h3><p>Час работы, 10–15 минут перерыва. Внутри дня появляются свои дедлайны.</p><span class="g">Игра · График вахты</span></div>
+
+    <div class="t">12:00</div>
+    <div class="b play"><h3>Выгрузи задачи из головы</h3><p>Планировщики и трекеры. Держать всё в голове — не бесплатно, и игра это показывает счётом.</p><span class="g">Игра · Вахтенный журнал</span></div>
+
+    <div class="t">13:00</div>
+    <div class="b key"><h3>Пауза</h3><p>Экран гаснет на 60 секунд, таймер идёт, дальше курс не пускает. Единственный кадр без интерьера — выход под сияние.</p></div>
+
+    <div class="t">14:00</div>
+    <div class="b"><h3>Спланируй неделю и оставь запас</h3><p>План недели, месяца, года и правило 10–15 % свободного времени на форс-мажоры.</p></div>
+
+    <div class="t">15:00</div>
+    <div class="b"><h3>Сложи похожее в один день</h3><p>День созвонов, день текстов, день ремонта. Переключение между типами стоит времени.</p></div>
+
+    <div class="t">15:30</div>
+    <div class="b play"><h3>Разгреби занос</h3><p>Одна неприятная задача с самого утра. Отложил — сугроб вырос.</p><span class="g">Игра · Утренний занос</span></div>
+
+    <div class="t">16:00</div>
+    <div class="b play"><h3>Загони себя в угол</h3><p>Два приёма разом: дать слово вслух и снять всё остальное со стопа только после главного.</p><span class="g">Игра · Выйди на связь</span><span class="g" style="margin-left:6px">Игра · Мачта</span></div>
+
+    <div class="t">16:30</div>
+    <div class="b play"><h3>Подбери фон</h3><p>Что можно ставить фоном под монотонную работу, а что утащит внимание.</p><span class="g">Игра · Эфир</span></div>
+
+    <div class="t">17:30</div>
+    <div class="b play"><h3>Награди себя</h3><p>Задача — поощрение. Связь награды с результатом рвать нельзя.</p><span class="g">Игра · НЗ</span></div>
+
+    <div class="t">18:00</div>
+    <div class="b key"><h3>Закрой вахту</h3><p>Рубильник. Свет переключается с холодного на тёплый — курс физически заканчивает рабочий день.</p></div>
+
+    <div class="t word">вечер</div>
+    <div class="b play"><h3>Отдыхай наоборот</h3><p>Эффективный отдых — деятельность, полярная той, от которой устал. Две чаши весов прямо из опорника.</p><span class="g">Игра · Весы</span></div>
+
+    <div class="t word">вечер</div>
+    <div class="b"><h3>Меняй обстановку</h3><p>Коворкинг, кофейня, соседний модуль. Скука приходит туда, где нет разнообразия.</p></div>
+
+    <div class="t word">выходные</div>
+    <div class="b play"><h3>Впиши личные цели</h3><p>В планировщик идут не только рабочие задачи. Финальный бланк собирает весь курс в один распорядок.</p><span class="g">Конструктор · Распорядок вахты</span></div>
+
+    <div class="t word">финал</div>
+    <div class="b key"><h3>Через три месяца</h3><p>Первое солнце после полярной ночи. Курс просит вернуться и сравнить самочувствие — и ставит напоминание в календарь.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Игры · 10 плюс конструктор</div>
+  <h2>Ошибка должна чего-то стоить</h2>
+  <p class="lead">Не викторина после блока. В каждой игре есть проигрыш, и он наступает от того самого поведения, которое опорник просит бросить.</p>
+
+  <div class="games">
+
+    <div class="game">
+      <div class="top"><h3>Вахтенный журнал</h3><span class="from">трекеры и планировщики</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Радиограммы прилетают одна за другой. Записать в журнал — стоит клика и пары секунд, оставить в голове — бесплатно и мгновенно. В голове четыре места; пятая задача выбивает предыдущую.</dd>
+        <dt>Что закрепляет</dt><dd>Опорник говорит: держать всё в голове занимает оперативную память и есть риск забыть про задачу <b>или про её детали</b>. Здесь это видно: бланк в голове затягивает инеем — сначала теряются детали, потом задача целиком.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Отчёт в конце дня: список того, что ты потерял. Второй заход — с журналом, и разница в цифрах.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>График вахты</h3><span class="from">слоты, перерывы, группировка, запас</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Магниты-задачи раскладываются по сетке 9:00–18:00. Час без перерыва роняет точность, соседство разнотипных задач стоит времени на разогрев, в 14:20 прилетает аварийный магнит.</dd>
+        <dt>Что закрепляет</dt><dd>Четыре техники в одном цикле. Забил день под завязку — форс-мажор всё обрушил; оставил <b>10–15 %</b> — вписался.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Закончить в 21:00. Даже если закрыты все задачи.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>Утренний занос</h3><span class="from">одна неприятная задача с самого утра</span></div>
+      <dl>
+        <dt>Механика</dt><dd>За ночь дверь занесло. Разгрести можно сразу — минута работы. Можно отложить и заняться приятным.</dd>
+        <dt>Что закрепляет</dt><dd>Цена отложенной задачи — не сама задача, а то, как она тянет день. Каждый отложенный час сугроб растёт, отъедает свет из щели и <b>физически загораживает интерфейс</b>: остальные дела начинают идти медленнее.</dd>
+        <dt>Проигрыш</dt><dd class="lose">К вечеру дверь завалена целиком: выйти нельзя, день закрыть нельзя. Режим на неделю: пять неприятных задач, по одной в день.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>Эфир</h3><span class="from">фон для монотонной работы</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Честно нудная задача — переписать столбец метеоданных в бланк. Три круга: в тишине, под захватывающий фон, под скучный. Игра меряет скорость и ошибки.</dd>
+        <dt>Что закрепляет</dt><dd>Таблица «подходит / не подходит» из опорника собирается <b>из твоих собственных цифр</b>, а не из чужого мнения.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Не провал, а свой результат на экране: под летсплей выходит вдвое дольше и с ошибками.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>Мачта</h3><span class="from">заклятый враг</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Полторы минуты. Мачту сковало льдом, связи нет — все остальные задачи висят под замками. Удары — интервалы фокуса.</dd>
+        <dt>Что закрепляет</dt><dd>Ультимативный приём: ничего другого, пока не сделано это.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Каждое принятое отвлечение лечит лёд обратно. Согласился трижды — начинаешь сначала.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>Весы</h3><span class="from">эффективный отдых</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Прямая цитата: «это похоже на две чаши весов». Слева ложится сегодняшняя работа, справа игрок выбирает отдых.</dd>
+        <dt>Что закрепляет</dt><dd>Отдых должен быть полярным по типу, а не просто приятным.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Сон и сериал после сидячего дня чашу не поднимают. Весы просто не двигаются — спорить не с чем.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>Аппаратная</h3><span class="from">рабочее место и свет</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Игрок обставляет угол модуля и крутит лампу от 2000 до 6500 K — сцена перекрашивается в реальном времени, фокус-метр реагирует.</dd>
+        <dt>Что закрепляет</dt><dd>Отдельное место только для работы, удобная мебель, <b>4000–5000 K</b>, минимум отвлекающих факторов.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Койка и приёмник вплотную к столу роняют счёт; тёплая лампа усыпляет метр. Собранный угол потом подставляется фоном в следующие блоки.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>Выйди на связь</h3><span class="from">дай слово</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Игрок называет срок вслух и выбирает, кому: никому, начальнику смены, приятелю на соседней станции или тому, кто нравится. Шансы меняются на глазах.</dd>
+        <dt>Что закрепляет</dt><dd>Приём работает сильнее всего, когда слово дано людям, которые тебе нравятся, — так и в опорнике.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Выбрал «никому» — мосты целы, вероятность прежняя. На выходе готовый текст обещания, который можно скопировать и правда отправить.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>Скины</h3><span class="from">одежда</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Тридцать секунд: четыре комплекта на одном персонаже, полоса самоощущения реагирует.</dd>
+        <dt>Что закрепляет</dt><dd>Работать надо в том, в чём можно выйти на улицу.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Термобельё с пледом — тепло, удобно и минус к самоощущению на весь день.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>Неприкосновенный запас</h3><span class="from">задача — поощрение</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Шкафчик с НЗ открывается только тогда, когда в него бросают закрытую задачу.</dd>
+        <dt>Что закрепляет</dt><dd>Награждать себя только за результат, иначе связь рвётся.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Нажать просто так нельзя — замок не откроется. В этом весь приём.</dd>
+      </dl>
+    </div>
+
+    <div class="game">
+      <div class="top"><h3>Распорядок вахты</h3><span class="from">финал · не игра</span></div>
+      <dl>
+        <dt>Механика</dt><dd>Заполняемый бланк: часы, слоты, перерывы, дни по типам, запас, награды и три личные цели. Черновик сам сохраняется в браузере.</dd>
+        <dt>Что закрепляет</dt><dd>Собирает весь курс в один документ, который человек унесёт с собой. Выгрузка в <code>.txt</code> и <code>.ics</code> — импорт прямо в календарь, как советует опорник.</dd>
+        <dt>Проигрыш</dt><dd class="lose">Валидатор спорит: десять часов работы без перерывов не принимает, ноль личных целей просит дописать. Плюс ставит напоминание на три месяца вперёд.</dd>
+      </dl>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Четыре хода</div>
+  <h2>Ради чего курс запомнится</h2>
+  <p class="lead">Самобытность не в оформлении, а в правилах, которые проходят через весь курс насквозь.</p>
+  <div class="moves">
+    <div class="move">
+      <h3>Курс сам делает паузу</h3>
+      <p>В 13:00 экран гаснет на 60 секунд и дальше не пускает. Пропуск есть, но его комментируют.</p>
+    </div>
+    <div class="move">
+      <h3>Победа — уйти в 18:00</h3>
+      <p>Все счётчики считают переработку поражением. Разворот привычной логики продуктивных тренажёров.</p>
+    </div>
+    <div class="move">
+      <h3>Свет учит вместо абзаца</h3>
+      <p>Рабочие блоки залиты холодным светом, вечерние — тёплым. Правило про 4000–5000 K усваивается глазами.</p>
+    </div>
+    <div class="move">
+      <h3>Станция помнит</h3>
+      <p>Собранный угол, выбранный график и скин тянутся через весь курс и подставляются в финальный бланк.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Кто в курсе</div>
+  <h2>Трое, и ни одного из прошлого курса</h2>
+  <div class="cast">
+    <div class="who">
+      <h3>Ты — новичок на первой зимовке</h3>
+      <p>Женский и мужской вариант на выбор в начале. Один рост и одна поза ног во всех кадрах, иначе персонаж прыгает при смене.</p>
+    </div>
+    <div class="who">
+      <h3>Старший смены</h3>
+      <p>Женщина за пятьдесят, седая коса, растянутый свитер. Её репликами идут заметки на полях — роль, которую в опорнике играла жаба.</p>
+    </div>
+    <div class="who">
+      <h3>Пёс станции</h3>
+      <p>Лайка. Подсказывает, шутит, а в блоке про паузы один раз просто уводит гулять — единственный момент, когда он перебивает курс.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Производство</div>
+  <h2>Как это собирается</h2>
+  <ul>
+    <li><b>Стиль</b> — живописная полуреалистичная иллюстрация, как фоны в анимационном кино. Не пиксель.</li>
+    <li><b>Кадры</b> — свой фон на каждый из 18 блоков, ни одного повтора; плюс сцены и предметы игр. Промпты и список файлов — в соседнем документе «Кадры полярной станции».</li>
+    <li><b>Токенов стиля два.</b> Проверено генерацией: единый токен ломал интерьеры — модель насыпала снег на пол комнаты и вешала сияние над столом. Интерьерный токен прямо запрещает небо, сияние и снег внутри.</li>
+    <li><b>Никаких надписей внутри картинок.</b> Подписи, цифры на шкале, разлиновка журнала и расписания — версткой поверх.</li>
+    <li><b>Сборка</b> — как в прошлом курсе: правки в <code>slides-deck.html</code>, разметку собирает <code>build.py</code> → <code>index.html</code>. Картинка подставляется, только если файл уже лежит в <code>assets/</code>, поэтому слоты под будущие кадры можно заводить заранее.</li>
+    <li><b>Проверки</b> — обход панелей со скриншотами, контраст, длительность кадров, прогон игр. В этот раз они должны лежать в <code>tools/</code> внутри проекта, а не во временной папке.</li>
+  </ul>
+  <div class="note">Порядок работ: сначала 18 фонов — на них уже можно верстать и читать курс. Потом сцены и предметы, по одной игре за подход. Персонажи последними: к тому моменту будет видно, какие позы реально нужны.</div>
+</section>
+
+<footer>План курса по опорнику «Работа на удалёнке». Рядом: «Кадры полярной станции» — промпты и список ассетов.</footer>
+</div>

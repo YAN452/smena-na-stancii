@@ -1,0 +1,573 @@
+<title>Кадры полярной станции</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --night:#0A1420;
+    --panel:#0E1B27;
+    --panel-2:#122333;
+    --line:#1E3346;
+    --line-soft:#17293a;
+    --ice:#D6E7F2;
+    --ice-dim:#93AABF;
+    --ice-faint:#6B8299;
+    --amber:#F2B441;
+    --aurora:#5FD3A0;
+    --cold:#BFD9E8;
+    --alarm:#E2705A;
+    --r:3px;
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--night);
+    color:var(--ice);
+    font-family:"Golos Text","Segoe UI",system-ui,sans-serif;
+    font-size:15.5px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background:
+      radial-gradient(120% 80% at 78% -10%, rgba(95,211,160,.10), transparent 60%),
+      radial-gradient(90% 60% at 8% 108%, rgba(242,180,65,.07), transparent 62%);
+  }
+  .wrap{position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:0 24px 96px}
+
+  /* ── шапка ─────────────────────────────────────────── */
+  header.top{border-bottom:1px solid var(--line); background:linear-gradient(180deg,rgba(18,35,51,.85),rgba(10,20,32,0))}
+  .top-in{max-width:var(--maxw); margin:0 auto; padding:26px 24px 20px}
+  .eyebrow{
+    font-family:"JetBrains Mono",ui-monospace,monospace;
+    font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ice-faint);
+  }
+  h1{
+    font-family:"Oswald","Arial Narrow",sans-serif;
+    font-weight:600; text-transform:uppercase; letter-spacing:.035em;
+    font-size:clamp(30px,5.2vw,46px); line-height:1.02; margin:.28em 0 .18em;
+    text-wrap:balance;
+  }
+  h1 .thin{color:var(--ice-dim); font-weight:400}
+  .sub{max-width:66ch; color:var(--ice-dim); margin:0}
+  .meter{display:flex; align-items:center; gap:10px; margin-top:18px; flex-wrap:wrap}
+  .meter .copy{margin-left:0}
+  .meter-bar{position:relative; flex:1 1 240px; height:6px; background:var(--panel-2); border:1px solid var(--line); border-radius:99px; overflow:hidden}
+  .meter-bar i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--aurora),var(--cold)); transition:width .25s ease}
+  .meter-txt{font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ice-dim); font-variant-numeric:tabular-nums}
+  .meter-txt b{color:var(--ice); font-weight:500}
+  .reset{
+    font:inherit; font-size:12px; background:none; border:1px solid var(--line);
+    color:var(--ice-faint); padding:3px 10px; border-radius:var(--r); cursor:pointer;
+  }
+  .reset:hover{color:var(--ice); border-color:var(--ice-faint)}
+
+  /* ── навигация ─────────────────────────────────────── */
+  nav.chips{position:sticky; top:0; z-index:5; background:rgba(10,20,32,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  .chips-in{max-width:var(--maxw); margin:0 auto; padding:9px 24px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:thin}
+  .chips-in a{
+    flex:0 0 auto; text-decoration:none; color:var(--ice-dim);
+    font-family:"JetBrains Mono",monospace; font-size:11.5px; letter-spacing:.04em;
+    padding:5px 10px; border:1px solid var(--line-soft); border-radius:var(--r); white-space:nowrap;
+  }
+  .chips-in a:hover{color:var(--night); background:var(--cold); border-color:var(--cold)}
+
+  /* ── секции ────────────────────────────────────────── */
+  section{padding-top:54px; scroll-margin-top:56px}
+  .sec-head{border-top:1px solid var(--line); padding-top:16px; margin-bottom:22px}
+  .sec-head .eyebrow{display:flex; gap:12px; align-items:baseline}
+  .sec-head .eyebrow span:last-child{color:var(--amber)}
+  h2{
+    font-family:"Oswald","Arial Narrow",sans-serif; font-weight:500; text-transform:uppercase;
+    letter-spacing:.03em; font-size:clamp(21px,2.6vw,27px); margin:.22em 0 .3em; text-wrap:balance;
+  }
+  .lead{max-width:68ch; color:var(--ice-dim); margin:0 0 6px}
+  .sec-tools{margin-top:12px}
+
+  /* ── карточка ассета ───────────────────────────────── */
+  .items{display:flex; flex-direction:column; gap:10px; margin-top:20px}
+  .item{
+    display:grid; grid-template-columns:34px 1fr; gap:0 14px;
+    background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r);
+    padding:14px 16px 14px 10px;
+  }
+  .item.done{background:var(--night); border-color:var(--line-soft); opacity:.55}
+  .tick{
+    grid-row:1 / span 3; justify-self:center; margin-top:3px;
+    width:18px; height:18px; border:1px solid var(--line); border-radius:2px;
+    background:var(--panel-2); cursor:pointer; position:relative; padding:0;
+  }
+  .tick:hover{border-color:var(--aurora)}
+  .tick[aria-pressed="true"]{background:var(--aurora); border-color:var(--aurora)}
+  .tick[aria-pressed="true"]::after{
+    content:""; position:absolute; left:5px; top:1px; width:5px; height:10px;
+    border:solid var(--night); border-width:0 2px 2px 0; transform:rotate(42deg);
+  }
+  .tick:focus-visible{outline:2px solid var(--cold); outline-offset:2px}
+  .row1{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .fname{font-family:"JetBrains Mono",monospace; font-size:13px; color:var(--cold); letter-spacing:-.01em}
+  .chip{
+    font-family:"JetBrains Mono",monospace; font-size:10.5px; letter-spacing:.05em;
+    color:var(--ice-faint); border:1px solid var(--line); border-radius:99px; padding:1px 8px;
+  }
+  .chip.k{color:var(--amber); border-color:rgba(242,180,65,.35)}
+  .copy{
+    margin-left:auto; font:inherit; font-size:12px; font-family:"JetBrains Mono",monospace;
+    background:var(--panel-2); border:1px solid var(--line); color:var(--ice-dim);
+    padding:4px 11px; border-radius:var(--r); cursor:pointer; white-space:nowrap;
+  }
+  .copy:hover{color:var(--night); background:var(--cold); border-color:var(--cold)}
+  .copy.ok{color:var(--night); background:var(--aurora); border-color:var(--aurora)}
+  .copy:focus-visible{outline:2px solid var(--cold); outline-offset:2px}
+  .t{margin:7px 0 0; font-weight:500}
+  .n{margin:1px 0 0; color:var(--ice-dim); font-size:14.2px; max-width:72ch}
+  .p{
+    margin:11px 0 0; padding:10px 12px; background:var(--panel-2);
+    border-left:2px solid var(--line); border-radius:0 var(--r) var(--r) 0;
+    font-family:"JetBrains Mono",monospace; font-size:12.6px; line-height:1.62;
+    color:var(--ice); white-space:pre-wrap; overflow-x:auto;
+  }
+  .item.scene .p{border-left-color:var(--cold)}
+  .item.int   .p{border-left-color:var(--ice-dim)}
+  .item.obj   .p{border-left-color:var(--amber)}
+  .item.char  .p{border-left-color:var(--aurora)}
+  .item.fx    .p{border-left-color:var(--alarm)}
+
+  /* ── токены и палитра ──────────────────────────────── */
+  .token{background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r); padding:14px 16px; margin-bottom:10px}
+  .swatches{display:grid; grid-template-columns:repeat(auto-fit,minmax(148px,1fr)); gap:8px; margin-top:18px}
+  .sw{border:1px solid var(--line-soft); border-radius:var(--r); overflow:hidden; background:var(--panel)}
+  .sw i{display:block; height:44px}
+  .sw div{padding:7px 10px}
+  .sw b{display:block; font-size:13px; font-weight:500}
+  .sw code{font-family:"JetBrains Mono",monospace; font-size:11.5px; color:var(--ice-faint)}
+  .note{
+    border-left:2px solid var(--amber); background:rgba(242,180,65,.05);
+    padding:11px 14px; margin:18px 0 0; color:var(--ice-dim); max-width:74ch; border-radius:0 var(--r) var(--r) 0;
+  }
+  .note b{color:var(--ice); font-weight:500}
+  ol.steps{max-width:72ch; padding-left:20px; color:var(--ice-dim)}
+  ol.steps li{margin-bottom:7px}
+  ol.steps b,ul.plain b{color:var(--ice); font-weight:500}
+  ul.plain{max-width:72ch; padding-left:20px; color:var(--ice-dim)}
+  ul.plain li{margin-bottom:5px}
+  code.inl{font-family:"JetBrains Mono",monospace; font-size:12.5px; color:var(--cold)}
+  footer{margin-top:64px; padding-top:18px; border-top:1px solid var(--line); color:var(--ice-faint); font-size:13.5px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  @media (max-width:600px){
+    .item{grid-template-columns:26px 1fr; padding:12px 12px 12px 8px}
+    .copy{margin-left:0}
+  }
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <div class="eyebrow">Курс «Смена на станции» · производственная спецификация</div>
+    <h1>Кадры полярной <span class="thin">станции</span></h1>
+    <p class="sub">Всё, что нужно сгенерировать: свой фон на каждый блок курса, сцены и предметы для одиннадцати тренажёров, персонажи и оверлеи. Кнопка «Скопировать» отдаёт готовый промпт целиком — со стилевым токеном и негативом, вставлять можно сразу.</p>
+    <div class="meter">
+      <div class="meter-bar"><i id="bar"></i></div>
+      <div class="meter-txt"><b id="done">0</b> / <span id="total">0</span> готово</div>
+      <button class="copy" id="copyall" type="button">Скопировать все промпты</button>
+      <button class="reset" id="reset" type="button">Сбросить отметки</button>
+    </div>
+  </div>
+</header>
+
+<nav class="chips"><div class="chips-in" id="nav"></div></nav>
+
+<div class="wrap"><main id="main"></main>
+  <footer>Отметки о готовности хранятся только в этом браузере. Имена файлов — те же, что ждёт сборщик: кладите готовое в <code class="inl">assets/</code>, исходники — в <code class="inl">исходники/</code>.</footer>
+</div>
+
+<script>
+/* ── стилевые токены ───────────────────────────────── */
+const NEG = "--no text, letters, numbers, watermark, logo, ui, hud, pixel art, 8-bit, sprite, voxel, anime, chibi, plastic 3d render, oversaturated colors, neon cyberpunk, purple night palette, deformed hands, blurry";
+
+const S = {
+  scene: "STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork, arctic research station, polar night. Palette deep blue-black 0A1420 and steel blue 12263A, ice highlights CFE3EF, warm amber practical lamps F2B441, faint aurora green 5FD3A0. Volumetric light, frost, fine film grain, 16:9, completely deserted, nobody in frame, no text.\nEXTERIOR SCENE: ",
+  int: "STYLE: cinematic painterly matte-painting illustration, semi-realistic, visible brushwork. INTERIOR of a heated polar station module: a fully enclosed room with plywood walls, a ceiling and a dry wooden floor. No snow indoors, no sky, no aurora, no landscape inside the room; the polar night is visible only as darkness beyond a small frosted window. Lit only by practical lamps: cold 5000K work light BFD9E8 and warm amber F2B441, deep blue-black shadows 0A1420, steel blue 12263A. Volumetric lamp light, fine film grain, 16:9, nobody in frame, no text.\nINTERIOR SCENE: ",
+
+  obj: "STYLE: single object study, painterly semi-realistic, worn arctic station equipment, cold steel-blue base tones with warm amber rim light from upper left, subtle frost and scuffs, centered with even margins, isolated on transparent background, no cast shadow on the background, square 1:1, no text.\nOBJECT: ",
+  char: "STYLE: stylized painterly character illustration, semi-realistic proportions, arctic station clothing, cold blue key light with warm amber rim, full body, front view, standing, feet at the same height in every frame, centered with margins, isolated on transparent background (fallback: flat chroma green 00FF00 with no shadow on it), vertical 2:3, no text.\nCHARACTER: ",
+  sheet: "STYLE: icon sheet on transparent background, painterly semi-realistic miniatures, consistent size and lighting in every cell, cold blue-grey objects with a warm amber accent, even spacing, no frames, no text, no labels.\nSHEET: ",
+  fx: "STYLE: overlay texture on transparent background, painterly, subtle, low contrast, monochrome cold blue-white, no subject, no text.\nOVERLAY: "
+};
+
+/* ── данные ────────────────────────────────────────── */
+const DATA = [
+{
+  id:"start", nav:"Как работать", eyebrow:["Порядок","прочитать до первой генерации"],
+  title:"Сначала соберите эталон, потом всё остальное",
+  lead:"Главный риск такого объёма — разъехавшийся стиль: сто кадров, и каждый чуть свой. Порядок ниже держит их вместе.",
+  html:`<ol class="steps">
+    <li><b>Кадр-эталон.</b> Первым генерируйте <code class="inl">bg-00-cover</code>. Пока он не устраивает — не идите дальше: он задаёт свет, плотность мазка и уровень условности для всех остальных.</li>
+    <li><b>Референс на каждый следующий кадр.</b> Готовый эталон подаётся как reference image ко всем сценам, иначе станция будет каждый раз новая.</li>
+    <li><b>Персонажи — через лист.</b> Сначала <code class="inl">sheet-char-*</code> (три ракурса + мимика), потом уже отдельные позы с этого листа как референса. Иначе лицо поплывёт между кадрами.</li>
+    <li><b>Никаких надписей на картинках.</b> Все подписи, цифры и таблички — версткой поверх. Генераторы всё равно пишут нечитаемую кириллицу, а текст на фоне нельзя перевести и нельзя поправить.</li>
+    <li><b>Проверка на «прошлый курс».</b> В негативе стоит <code class="inl">purple night palette</code>: если кадр уехал в фиолетовую ночь, он читается как Elevator pitch — перегенерируйте.</li>
+  </ol>
+  <div class="note"><b>Проверено на пяти кадрах 05.09.2026.</b> Модель <code class="inl">z_image</code> — 0,15 кредита за кадр, стиль держит: живописный мазок, холодная ночь, тёплые лампы, сияние. Экстерьеры вышли сразу. А вот единый токен на всё ломал интерьеры: слова <i>polar night, aurora, snow</i> модель применяла к комнате буквально — снег на полу аппаратной, сияние над столом, приёмник посреди снежного поля. Поэтому токенов теперь два, и интерьерный прямо запрещает небо, сияние и снег внутри. Пересняли — комната закрылась, ночь осталась только за окном. Ещё одно: <i>no people</i> модель иногда игнорирует, в кадре у двери появился человек. Для экстерьеров в токен добавлено <code class="inl">completely deserted, nobody in frame</code>.</div>
+  <div class="note"><b>Что доступно на бесплатном плане.</b> <code class="inl">seedream_v4_5</code> отказал: <i>requires basic plan or higher</i>. Из проверенного работает <code class="inl">z_image</code> — 0,15 кредита, то есть вся сотня кадров стоит около 15 кредитов. Для сравнения: <code class="inl">nano_banana</code> — 1 кредит за кадр, те же сто кадров обойдутся в 100.</div>
+  <div class="note"><b>Что уже решено по стилю.</b> Не пиксель-арт: живописная полуреалистичная иллюстрация, как фоны в анимационном кино. Персонажи новые, ни один из прошлого курса не переиспользуется. Сеттинг — рамка, а советы внутри остаются буквальными: в игре «Эфир» на радиошкале ловятся не выдуманные передачи, а реальные летсплеи, аниме и обзоры книг из опорника.</div>`
+},
+{
+  id:"tokens", nav:"Токены и палитра", eyebrow:["Основа","подставляется в каждый промпт"],
+  title:"Стилевые токены",
+  lead:"Кнопки «Скопировать» уже склеивают токен + описание кадра + негатив. Здесь — сами токены, если понадобится собрать промпт руками.",
+  tokens:true
+},
+{
+  id:"bg", nav:"Фоны блоков", eyebrow:["Фоны курса","20 кадров · свой на каждый блок"],
+  title:"Один фон — один блок, ни одного повтора",
+  lead:"Курс идёт по часам вахты: 09:00 — начало, 13:00 — обязательная пауза, 18:00 — конец смены, дальше вечер и выходные. Колонка с кельвинами — не украшение: свет кадра меняется по ходу дня, и правило про 4000–5000 K ученик запоминает глазами, ещё до того как прочтёт абзац.",
+  items:[
+    {f:"bg-00-cover.jpg", kind:"scene", size:"2048×1152 · JPEG", k:"полярная ночь", t:"Обложка · 08:40", n:"Станция снаружи, свет только в одном окне. Он же кадр-эталон для всей серии.", p:"wide establishing shot of a small arctic research station half buried in snow at night, one window glowing warm amber, antenna mast with guy wires, deep drifts, a faint green aurora over the ridge behind, long blue shadows on the snow, vast quiet emptiness"},
+    {f:"bg-01-boundaries.jpg", kind:"int", size:"2048×1152 · JPEG", k:"4000 K", t:"09:00 · Поставь границы смены", n:"Две двери напротив друг друга — работа и жильё. Главная мысль курса, сказанная планировкой.", p:"interior corridor of a polar station, two doors facing each other across the passage, a large round wall clock above one of them, parkas on hooks, rubber boots below, cold ceiling light in the corridor and warm light spilling under one door"},
+    {f:"bg-02-desk.jpg", kind:"int", size:"2048×1152 · JPEG", k:"5000 K", t:"09:30 · Собери себе место", n:"Пустой стол под лампой — на него игрок будет расставлять мебель в игре «Аппаратная».", p:"equipment room of an arctic station, an empty wooden desk under an adjustable articulated lamp, racks of instruments with round dials behind, coiled cables on hooks, thick frost on a small square window, clean cold work light"},
+    {f:"bg-03-locker.jpg", kind:"int", size:"2048×1152 · JPEG", k:"2700 K", t:"10:00 · Выбери, в чём работать", n:"Шкаф, где рядом висят роба и растянутый свитер. Блок про одежду и «скины».", p:"open metal locker in a station bunk room, worn wool sweater and canvas work overalls on hangers, folded thermal underwear on the shelf, a small mirror inside the door, a bare warm bulb overhead"},
+    {f:"bg-04-board.jpg", kind:"int", size:"2048×1152 · JPEG", k:"5000 K", t:"10:30 · Разбей смену на слоты", n:"Пустая сетка расписания — на неё ляжет игра «График вахты». Сетка должна быть пустой, без единой надписи.", p:"magnetic steel board bolted to a riveted wall, an empty schedule grid scratched in chalk lines, blank magnets and a grease pencil resting on the ledge, cold overhead light, straight-on composition"},
+    {f:"bg-05-log.jpg", kind:"int", size:"2048×1152 · JPEG", k:"2700 K", t:"12:00 · Выгрузи из головы в журнал", n:"Стол радиста: журнал, карандаш на верёвке, приёмник. Блок про трекеры.", p:"radio desk with an open blank logbook, a pencil on a string, a heavy desk microphone, a valve receiver with a glowing tuning dial, an enamel mug, one warm pool of lamplight in an otherwise dark room"},
+    {f:"bg-06-outside.jpg", kind:"scene", size:"2048×1152 · JPEG", k:"сияние", t:"13:00 · Пауза", n:"Единственный кадр без интерьера. На нём курс на минуту гаснет и не пускает дальше.", p:"point of view standing just outside the station door at night, an enormous aurora curtain sweeping across the whole sky, flat snow field, footprints leading away from the door, warm light from the doorway behind, wide calm composition, empty foreground"},
+    {f:"bg-07-supply.jpg", kind:"int", size:"2048×1152 · JPEG", k:"2700 K", t:"14:00 · Спланируй неделю и оставь запас", n:"Склад топлива: запас, который нельзя расходовать под ноль. Здесь живёт правило 10–15 %.", p:"fuel and supply store room of a polar station, stacked steel barrels and wooden crates, a single hanging bulb swinging slightly, chalk tally marks on the barrels, cold breath visible in the air"},
+    {f:"bg-08-shelves.jpg", kind:"int", size:"2048×1152 · JPEG", k:"5000 K", t:"15:00 · Сложи похожее в один день", n:"Стеллаж, где всё разложено по типам. Блок про группировку задач.", p:"deep storage shelves seen head-on, crates and boxes sorted strictly by kind, tools hung in neat rows by size, cold blue light, orderly symmetrical composition, one empty slot in the middle row"},
+    {f:"bg-09-drift.jpg", kind:"int", size:"2048×1152 · JPEG", k:"4000 K", t:"15:30 · Разгреби занос", n:"Тамбур, наружную дверь наполовину завалило. Фон игры про неприятную задачу с утра.", p:"inside the vestibule of a polar station, the outer door half blocked by a wall of packed windblown snow, a shovel leaning against the wall, dim blue polar twilight through the open gap at the top, bare cold lamp inside"},
+    {f:"bg-10-mast.jpg", kind:"scene", size:"2048×1152 · JPEG", k:"прожектор", t:"16:00 · Загони себя в угол", n:"Обледеневшая мачта: пока не собьёшь лёд, связи нет и всё остальное заблокировано.", p:"ice-covered antenna mast against a black sky, thick rime coating the guy wires, station roof below in the corner of the frame, a harsh work floodlight from below throwing the mast into relief, faint aurora low on the horizon"},
+    {f:"bg-11-ether.jpg", kind:"int", size:"2048×1152 · JPEG", k:"2200 K", t:"16:30 · Подбери фон", n:"Приёмник крупно, шкала светится. Блок про фон для монотонной работы.", p:"close-up of a vintage valve radio receiver on a desk, glowing amber tuning dial with a needle, headphones lying beside it, dark room around, dial light reflected in the varnished wood"},
+    {f:"bg-12-ration.jpg", kind:"int", size:"2048×1152 · JPEG", k:"2700 K", t:"17:30 · Награди себя", n:"Полка НЗ: сгущёнка и шоколад. Награда, которая выдаётся только за закрытую задачу.", p:"a shelf of ration supplies in a small locker, tins of condensed milk, chocolate bars in foil, a tin of canned meat, a hasp with a small padlock hanging open, warm bulb, cosy cluttered composition"},
+    {f:"bg-13-switch.jpg", kind:"int", size:"2048×1152 · JPEG", k:"5000→2700 K", t:"18:00 · Закрой вахту", n:"Момент, ради которого построен курс: свет переключается с холодного на тёплый.", p:"electrical panel with a large knife switch and round gauges, the room lit half in cold blue and half in warm amber as the lighting changes over, dark station interior, dust in the beam"},
+    {f:"bg-14-mess.jpg", kind:"int", size:"2048×1152 · JPEG", k:"2700 K", t:"вечер · Отдыхай наоборот", n:"Кают-компания с латунными весами на столе — фон игры «Весы».", p:"station mess room in the evening, a long scuffed table with a brass balance scale standing on it, a guitar in the corner, a pull-up bar fixed in the doorway, warm lamps inside, cold blue window behind"},
+    {f:"bg-15-passage.jpg", kind:"scene", size:"2048×1152 · JPEG", k:"4000 K", t:"вечер · Меняй обстановку", n:"Переход между модулями — про смену места работы.", p:"covered wooden walkway between two station modules at night, snow blowing in through the gaps between the boards, a lit doorway at the far end, steam venting from a pipe, strong perspective down the passage"},
+    {f:"bg-16-wall.jpg", kind:"int", size:"2048×1152 · JPEG", k:"2400 K", t:"выходные · Впиши личные цели", n:"Стена над койкой: фотографии, календарь с зачёркнутыми днями. Личное, не рабочее.", p:"bunk wall covered with pinned photographs and postcards, a paper wall calendar with days crossed out, a knitted blanket edge below, a small reading lamp clipped to the frame, intimate warm light"},
+    {f:"bg-17-sunrise.jpg", kind:"scene", size:"2048×1152 · JPEG", k:"первое солнце", t:"финал · Через три месяца", n:"Опорник просит применять техники три месяца — ровно столько длится полярная ночь. Финал курса: первый рассвет.", p:"the first sunrise after the polar night, a low orange sun just clearing the horizon over an endless snow field, the station in silhouette on the left, long blue shadows stretching towards the viewer, clear cold sky, hopeful"},
+    {f:"bg-18-hail.jpg", kind:"int", size:"2048×1152 · JPEG", k:"2400 K", t:"16:00 · Дай слово", n:"Приём 9: обещание, произнесённое вслух. Кадр — тангента и микрофон, момент перед нажатием.", p:"radio room of the station seen close, a hand-held microphone on a coiled cord lying on the desk beside a valve transceiver, glowing tuning scale, a wall map with pins above, an open notebook, one warm lamp overhead, nobody in frame"},
+    {f:"bg-19-porch.jpg", kind:"scene", size:"2048×1152 · JPEG", k:"сияние", t:"вечер · Делай паузы", n:"Приём 15: короткий выход раз в час. Крыльцо, три ступени, следы небольшой петли и обратно.", p:"the porch of a polar station at night seen from a few steps away, three metal steps swept clear of snow, a handrail, a lamp above the door casting a warm pool of light on the snow, footprints going in a small loop and back to the door, faint aurora low over the horizon"},
+  ]
+},
+{
+  id:"g1", nav:"Игра · Журнал", eyebrow:["Игра 1","трекеры и планировщики"],
+  title:"Вахтенный журнал",
+  lead:"Радиограммы прилетают одна за другой. Записать в журнал — стоит времени и клика, оставить в голове — бесплатно и мгновенно. В голове четыре места, пятая задача выбивает предыдущую, а те, что остались, затягивает инеем: сначала теряются детали, потом задача целиком. Отсюда три состояния бланка.",
+  items:[
+    {f:"scene-log-desk.jpg", kind:"int", size:"1920×1080 · JPEG", t:"Сцена игры", n:"Стол сверху под небольшим углом, свободное поле в центре — туда лягут бланки.", p:"radio operator desk seen from above at a slight angle, open blank logbook on the left, valve receiver on the right, empty worn wooden surface in the middle of the frame, warm lamplight from the top left, dark edges"},
+    {f:"obj-logbook.png", kind:"obj", size:"1024×1024 · PNG α", t:"Журнал", n:"Открытый разворот, страницы пустые — строки нарисуем версткой.", p:"an open logbook with blank ruled pages, cardboard cover, worn corners, a pencil tied to it with string lying across the page"},
+    {f:"obj-form-clear.png", kind:"obj", size:"1024×1024 · PNG α", t:"Бланк · чистый", n:"Задача, которую записали. Три бланка нужны в одном ракурсе и одном размере.", p:"a single small blank paper radiogram form, slightly creased, clean and dry, lying flat, three quarter top view"},
+    {f:"obj-form-frost.png", kind:"obj", size:"1024×1024 · PNG α", t:"Бланк · подмёрз", n:"Задача, которую держат в голове: детали начали теряться.", p:"the same small blank paper form, now with frost crystals creeping in from the edges, the paper damp and stiffening, identical angle and size"},
+    {f:"obj-form-iced.png", kind:"obj", size:"1024×1024 · PNG α", t:"Бланк · подо льдом", n:"Задача забыта целиком — этот бланк уходит в отчёт «что ты потерял».", p:"the same small paper form completely encased in a block of cloudy ice, edges rounded by frost, unreadable, identical angle and size"},
+    {f:"obj-mic.png", kind:"obj", size:"1024×1024 · PNG α", t:"Тангента", n:"Кнопка приёма новой радиограммы.", p:"a heavy vintage push-to-talk handheld microphone with a coiled cable, bakelite body, worn metal grille"},
+    {f:"obj-mug.png", kind:"obj", size:"1024×1024 · PNG α", t:"Кружка", n:"Мелочь для сцены и для награды в другой игре.", p:"a chipped white enamel mug with a blue rim, steam rising, a spoon inside"}
+  ]
+},
+{
+  id:"g2", nav:"Игра · График", eyebrow:["Игра 2","слоты, перерывы, группировка, запас"],
+  title:"График вахты",
+  lead:"Магниты-задачи раскладываются по сетке 9:00–18:00. Час без перерыва роняет точность, соседство разнотипных задач стоит времени на разогрев, а в 14:20 прилетает аварийный магнит. Забил день под завязку — всё рассыпалось; оставил 10–15 % — вписался. Проигрыш здесь — закончить в 21:00, даже если закрыл всё.",
+  items:[
+    {f:"scene-board.jpg", kind:"int", size:"1920×1080 · JPEG", t:"Сцена игры", n:"Доска почти во весь кадр, строго фронтально, сетка пустая.", p:"a large magnetic steel board filling the frame straight on, empty grid scratched in chalk, riveted metal frame, a narrow ledge along the bottom with a grease pencil, even cold light, no writing anywhere"},
+    {f:"obj-magnet-radio.png", kind:"obj", size:"1024×1024 · PNG α", t:"Магнит · связь", n:"Тип задач «созвоны». Все магниты — одна форма, разный предмет внутри.", p:"a round magnet disc of dark enamel with a small microphone symbol embossed in relief on it, worn edges, straight-on view"},
+    {f:"obj-magnet-wrench.png", kind:"obj", size:"1024×1024 · PNG α", t:"Магнит · ремонт", n:"Тип «руками»: чинить, налаживать.", p:"the same round enamel magnet disc, with a small embossed wrench in relief, identical size and angle"},
+    {f:"obj-magnet-balloon.png", kind:"obj", size:"1024×1024 · PNG α", t:"Магнит · наблюдения", n:"Тип «рутина по расписанию».", p:"the same round enamel magnet disc, with a small embossed weather balloon in relief, identical size and angle"},
+    {f:"obj-magnet-paper.png", kind:"obj", size:"1024×1024 · PNG α", t:"Магнит · тексты", n:"Тип «писать и считать».", p:"the same round enamel magnet disc, with a small embossed sheet of paper in relief, identical size and angle"},
+    {f:"obj-magnet-break.png", kind:"obj", size:"1024×1024 · PNG α", t:"Магнит · перерыв", n:"Тёплый акцент, чтобы перерывы читались в сетке издалека.", p:"the same round magnet disc but in warm amber enamel, with a small embossed steaming mug in relief, identical size and angle"},
+    {f:"obj-magnet-alarm.png", kind:"obj", size:"1024×1024 · PNG α", t:"Магнит · форс-мажор", n:"Прилетает в 14:20 без спроса.", p:"the same round magnet disc in chipped red enamel, with a small embossed alarm bell in relief, identical size and angle"},
+    {f:"obj-grease-pencil.png", kind:"obj", size:"1024×1024 · PNG α", t:"Карандаш", n:"Курсор игры и мелочь для доски.", p:"a worn grease pencil with paper wrapping partly peeled back, blunt tip, lying at a slight diagonal"}
+  ]
+},
+{
+  id:"g3", nav:"Игра · Занос", eyebrow:["Игра 3","одна неприятная задача с самого утра"],
+  title:"Утренний занос",
+  lead:"За ночь дверь занесло. Разгрести можно сразу — минута работы; можно отложить и заняться приятным. Каждый отложенный час сугроб растёт, отъедает свет из дверной щели и физически загораживает интерфейс: остальные задачи начинают идти медленнее. Четыре стадии сугроба снимаются с одной точки, чтобы подменялись без скачка.",
+  items:[
+    {f:"scene-vestibule.jpg", kind:"int", size:"1920×1080 · JPEG", t:"Сцена игры", n:"Тамбур изнутри, дверь по центру, места под сугроб пусто.", p:"inside a station vestibule looking straight at the closed outer door, bare boards, a shovel hanging on the wall to the left, a single cold lamp above, the doorway free of snow, empty floor in front of the door"},
+    {f:"obj-drift-1.png", kind:"obj", size:"1024×1024 · PNG α", t:"Сугроб · стадия 1", n:"Утро, порог только присыпало.", p:"a low wedge of packed windblown snow across a doorway threshold, crisp wind-carved surface, front view, wide and flat"},
+    {f:"obj-drift-2.png", kind:"obj", size:"1024×1024 · PNG α", t:"Сугроб · стадия 2", n:"Отложил на час.", p:"the same wedge of packed snow but knee high against the door, same camera position and width, wind-carved ridges"},
+    {f:"obj-drift-3.png", kind:"obj", size:"1024×1024 · PNG α", t:"Сугроб · стадия 3", n:"Отложил до обеда.", p:"the same snow drift now chest high and pressing against the door, same camera position and width, hard packed surface with ice crust"},
+    {f:"obj-drift-4.png", kind:"obj", size:"1024×1024 · PNG α", t:"Сугроб · стадия 4", n:"Отложил на весь день: выйти уже нельзя.", p:"the same drift now covering the entire doorway to the top, only a thin dark gap left at the very top, same camera position and width, dense blue-white ice crust"},
+    {f:"obj-shovel.png", kind:"obj", size:"1024×1024 · PNG α", t:"Лопата", n:"Курсор и кнопка действия.", p:"a worn wooden-handled snow shovel with a dented aluminium blade, standing at a slight angle"},
+    {f:"obj-snow-chunks.png", kind:"obj", size:"1024×1024 · PNG α", t:"Комья снега", n:"Частицы при каждом взмахе — россыпь на прозрачном фоне.", p:"a scatter of broken snow chunks and powder of assorted sizes arranged apart from each other, sharp edges, no ground under them"}
+  ]
+},
+{
+  id:"g4", nav:"Игра · Эфир", eyebrow:["Игра 4","фон для монотонной работы"],
+  title:"Эфир",
+  lead:"Игроку дают честно нудную задачу — переписать столбец метеоданных в бланк — и три круга: в тишине, под захватывающий фон, под скучный. Игра меряет его собственную скорость и ошибки, и таблица «подходит / не подходит» из опорника собирается уже как вывод, а не как чужое мнение. Содержание карточек остаётся реальным: на шкале ловятся летсплеи и обзоры книг, а не выдуманные передачи.",
+  items:[
+    {f:"scene-radio-room.jpg", kind:"int", size:"1920×1080 · JPEG", t:"Сцена игры", n:"Приёмник слева, свободное место справа под бланк и поля ввода.", p:"a valve radio receiver standing on the left third of a desk, its tuning dial glowing, headphones hooked over the corner, the right half of the desk empty and clear, dark room, warm rim light along the receiver"},
+    {f:"obj-receiver.png", kind:"obj", size:"1024×1024 · PNG α", t:"Приёмник", n:"Отдельно от сцены — его шкала будет живой.", p:"a vintage valve radio receiver, wooden case, round glowing tuning scale, two large bakelite knobs, front three quarter view"},
+    {f:"obj-knob.png", kind:"obj", size:"1024×1024 · PNG α", t:"Ручка настройки", n:"Крутится мышью, ловит станции.", p:"a single large bakelite radio tuning knob with a metal pointer and ribbed edge, front view, isolated"},
+    {f:"obj-headphones.png", kind:"obj", size:"1024×1024 · PNG α", t:"Наушники", n:"Кнопка включения звука.", p:"heavy vintage bakelite headphones with a metal headband and cloth cable, lying flat, three quarter view"},
+    {f:"obj-weather-form.png", kind:"obj", size:"1024×1024 · PNG α", t:"Бланк метеосводки", n:"Та самая монотонная задача. Пустой, без цифр — цифры расставит игра.", p:"a blank meteorological report form with empty printed boxes and columns, no handwriting, slightly yellowed paper, lying flat, top down view"},
+    {f:"sheet-ether-good.png", kind:"sheet", size:"2048×1536 · PNG α", t:"Лист иконок · подходит", n:"Сетка 3×2, режется скриптом. Порядок: обзор книг · разбор фильма · конспиролог · турецкий сериал · стрим «учимся вместе» · рассказ про космос.", p:"a 3 by 2 grid of six small icons with generous even spacing: an open book with a bookmark, a film clapperboard with a cracked lens, a tinfoil pyramid over an old TV set, a bunch of roses beside a heart locket, a desk lamp over an open notebook, a small planet with a ring"},
+    {f:"sheet-ether-bad.png", kind:"sheet", size:"2048×1536 · PNG α", t:"Лист иконок · не подходит", n:"Тот же размер клетки и тот же свет, что у первого листа. Порядок: летсплей · клипы · аниме · кино · шортсы · обзор техники.", p:"a 3 by 2 grid of six small icons with generous even spacing, identical cell size and lighting to the previous sheet: a game controller, a musical note with headphones, a wide-eyed cartoon face mask, a cinema ticket pair, a vertical phone in portrait orientation, an opened cardboard box with a gadget in it"}
+  ]
+},
+{
+  id:"g5", nav:"Игра · Мачта", eyebrow:["Игра 5","заклятый враг"],
+  title:"Мачта",
+  lead:"Короткий бой на полторы минуты. Мачту сковало льдом, связи нет — все остальные задачи на экране висят под замками и не открываются. Удары — интервалы фокуса; каждое принятое отвлечение лечит лёд обратно.",
+  items:[
+    {f:"scene-mast-night.jpg", kind:"scene", size:"1920×1080 · JPEG", t:"Сцена игры", n:"Мачта по центру, снизу вверх, вокруг темнота — вся сцена держится на прожекторе.", p:"looking up at an antenna mast from its base at night, the mast running up the centre of the frame, guy wires spreading to the corners, a work floodlight at the bottom throwing hard light upward, black sky, snow crust below"},
+    {f:"obj-ice-1.png", kind:"obj", size:"1024×1024 · PNG α", t:"Наледь · полная", n:"Три стадии в одном ракурсе — накладываются на мачту и тают по мере ударов.", p:"a thick sleeve of rime ice shaped around a vertical metal mast section, opaque milky white, rough cauliflower surface, front view"},
+    {f:"obj-ice-2.png", kind:"obj", size:"1024×1024 · PNG α", t:"Наледь · сбита наполовину", n:"", p:"the same sleeve of rime ice but half broken away with sharp fracture edges, the bare metal showing through in places, identical angle and size"},
+    {f:"obj-ice-3.png", kind:"obj", size:"1024×1024 · PNG α", t:"Наледь · остатки", n:"", p:"only thin remnants of rime ice clinging to the metal in a few spots, wet glinting edges, identical angle and size"},
+    {f:"obj-hammer.png", kind:"obj", size:"1024×1024 · PNG α", t:"Молоток", n:"Кнопка удара.", p:"a worn rubber-headed mallet with a taped wooden handle, held at a slight diagonal, isolated"},
+    {f:"obj-lock.png", kind:"obj", size:"1024×1024 · PNG α", t:"Замок", n:"Висит на каждой заблокированной задаче, пока мачта во льду.", p:"a small steel padlock closed on a hasp, frost on the shackle, front view, isolated"}
+  ]
+},
+{
+  id:"g6", nav:"Игра · Весы", eyebrow:["Игра 6","эффективный отдых"],
+  title:"Весы",
+  lead:"Прямая цитата из опорника: «это похоже на две чаши весов». Слева ложится сегодняшняя работа, справа игрок выбирает отдых. Сон и сериал после сидячего дня чашу не поднимают — поднимает только полярное по типу. Чаши анимируются, поэтому весы разобраны на три файла.",
+  items:[
+    {f:"scene-mess-table.jpg", kind:"int", size:"1920×1080 · JPEG", t:"Сцена игры", n:"Стол кают-компании фронтально, центр свободен под весы.", p:"a long scuffed wooden mess table shot straight on from across it, warm lamp above, mugs and a kettle pushed to the far edges, the centre of the table completely clear, dark room behind"},
+    {f:"obj-scale-frame.png", kind:"obj", size:"1024×1024 · PNG α", t:"Весы · станина", n:"Без чаш и без коромысла — они отдельно.", p:"the column and heavy base of an antique brass balance scale without its beam or pans, tarnished metal, front view, isolated"},
+    {f:"obj-scale-beam.png", kind:"obj", size:"1024×1024 · PNG α", t:"Весы · коромысло", n:"Крутится вокруг центра.", p:"the beam of an antique brass balance scale alone, horizontal, with hooks at both ends and a pointer at the centre, tarnished brass, front view, isolated"},
+    {f:"obj-scale-pan.png", kind:"obj", size:"1024×1024 · PNG α", t:"Весы · чаша", n:"Один файл на обе чаши, вторая зеркалится кодом.", p:"a single shallow brass pan of a balance scale hanging on three thin chains, tarnished, front view, isolated"},
+    {f:"sheet-work-icons.png", kind:"sheet", size:"2048×1536 · PNG α", t:"Лист иконок · какой была работа", n:"Сетка 3×2: ответственная · малоподвижная · экранная · монотонная · разговорная · срочная.", p:"a 3 by 2 grid of six small icons with generous even spacing: a stamped official seal, a chair seen from the side, a glowing monitor, a row of identical bolts, two speech bubbles overlapping, a ringing alarm clock"},
+    {f:"sheet-rest-icons.png", kind:"sheet", size:"2048×2048 · PNG α", t:"Лист иконок · чем отдыхать", n:"Сетка 3×3, та же клетка и свет: бег · турник · прогулка · готовка · мастерить руками · разговор · сон · сериал · музыка.", p:"a 3 by 3 grid of nine small icons with generous even spacing, identical cell size and lighting to the previous sheet: a running boot, a horizontal bar, a snowy footpath, a cooking pot with steam, a hand plane with wood shavings, two mugs clinking, a folded pillow, a small television, a guitar"}
+  ]
+},
+{
+  id:"g7", nav:"Игра · Аппаратная", eyebrow:["Игра 7","рабочее место и свет"],
+  title:"Аппаратная",
+  lead:"Игрок обставляет угол модуля и крутит лампу от 2000 до 6500 K — вся сцена перекрашивается в реальном времени, а фокус-метр реагирует. Койка и приёмник рядом со столом счёт роняют. Собранный угол потом подставляется фоном в следующие блоки курса, поэтому все предметы снимаются в одной изометрии и на одном уровне глаз.",
+  items:[
+    {f:"scene-empty-corner.jpg", kind:"int", size:"1920×1080 · JPEG", t:"Пустой угол", n:"Голые стены и пол — холст для расстановки. Свет ровный, без выраженного источника, чтобы не спорил с лампой игрока.", p:"an empty corner of a polar station module, bare plywood walls with rivets, worn linoleum floor, one small frosted window high on the wall, no furniture at all, flat even light, isometric three quarter view"},
+    {f:"obj-desk.png", kind:"obj", size:"1024×1024 · PNG α", t:"Стол", n:"Все предметы этой игры — в одной изометрии, вид сверху-сбоку под 30°.", p:"a plain wooden work desk with a scratched top and one drawer, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-chair.png", kind:"obj", size:"1024×1024 · PNG α", t:"Кресло", n:"", p:"a worn office chair with a wooden seat and metal frame, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-monitor.png", kind:"obj", size:"1024×1024 · PNG α", t:"Большой монитор", n:"Экран выключен: свечение рисуем кодом.", p:"a large monitor on a stand with a dark switched-off screen, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-lamp-arm.png", kind:"obj", size:"1024×1024 · PNG α", t:"Лампа на кронштейне", n:"Ключевой предмет игры: её температуру игрок и крутит. Колба без свечения.", p:"an articulated metal desk lamp on a hinged arm with a conical shade, bulb not lit, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-shelf.png", kind:"obj", size:"1024×1024 · PNG α", t:"Полка", n:"", p:"a simple wall shelf with a few books and a tin box on it, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-bunk.png", kind:"obj", size:"1024×1024 · PNG α", t:"Койка", n:"Отвлекающий фактор: рядом со столом роняет счёт.", p:"a narrow metal bunk bed with a rumpled blanket and a pillow, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-heater.png", kind:"obj", size:"1024×1024 · PNG α", t:"Обогреватель", n:"", p:"a squat cast iron electric heater with a coiled element and a mesh guard, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-cable-tray.png", kind:"obj", size:"1024×1024 · PNG α", t:"Кабель-канал", n:"Мелочь, которая даёт очки за порядок.", p:"a length of metal cable tray with bundled cables neatly strapped inside, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-plant-lamp.png", kind:"obj", size:"1024×1024 · PNG α", t:"Зелень под фитолампой", n:"На зимовке это правда роскошь. Даёт очки за «потрогай траву».", p:"a small tray of green seedlings under a narrow grow lamp fixture, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-radio-set.png", kind:"obj", size:"1024×1024 · PNG α", t:"Приёмник", n:"Отвлекающий фактор или фон — зависит от того, что игрок поставит рядом.", p:"a small portable valve radio set with a fabric speaker grille, isometric three quarter view from above at thirty degrees"},
+    {f:"obj-rug.png", kind:"obj", size:"1024×1024 · PNG α", t:"Половик", n:"Делит угол на рабочий и жилой — тот самый приём про границы.", p:"a worn woven rug with a faded geometric pattern, lying flat, isometric view from above at thirty degrees"}
+  ]
+},
+{
+  id:"g8", nav:"Игра · Скины", eyebrow:["Игра 8","одежда"],
+  title:"Скины",
+  lead:"Тридцать секунд игры на прямую цитату из опорника: «подбирай разные скины в качестве рабочей одежды». Четыре комплекта на одном и том же персонаже, полоса самоощущения реагирует. Генерируется для того персонажа, которого игрок выбрал в начале курса; вторая версия — по тем же промптам со сменой персонажа.",
+  items:[
+    {f:"char-you-f-pyjama.png", kind:"char", size:"1024×1536 · PNG α", t:"Термобельё и плед", n:"Тепло, удобно, работать невозможно.", p:"the same young woman from the character sheet, wearing baggy thermal underwear and a blanket over her shoulders, slippers, sleepy posture, arms wrapped around herself"},
+    {f:"char-you-f-sweater.png", kind:"char", size:"1024×1536 · PNG α", t:"Растянутый свитер", n:"Компромисс, в котором большинство и живёт.", p:"the same young woman, wearing a stretched-out oversized wool sweater and soft trousers, relaxed neutral posture, hands in pockets"},
+    {f:"char-you-f-overall.png", kind:"char", size:"1024×1536 · PNG α", t:"Рабочая роба", n:"Верный ответ: в этом можно выйти к людям.", p:"the same young woman, wearing clean canvas work overalls over a checked shirt, sleeves rolled, upright confident posture"},
+    {f:"char-you-f-parka.png", kind:"char", size:"1024×1536 · PNG α", t:"Парка", n:"Для сцен наружу: занос, мачта, пауза под сиянием.", p:"the same young woman, wearing a heavy fur-trimmed parka with the hood down, mittens hanging on cords, snow dusting the shoulders"}
+  ]
+},
+{
+  id:"g9", nav:"Игра · НЗ", eyebrow:["Игра 9","задача — поощрение"],
+  title:"Неприкосновенный запас",
+  lead:"Шкафчик с НЗ открывается только тогда, когда в него бросают закрытую задачу. Нажать просто так нельзя — в этом весь приём: связь награды с результатом не должна рваться.",
+  items:[
+    {f:"scene-ration-locker.jpg", kind:"int", size:"1920×1080 · JPEG", t:"Сцена игры", n:"Шкафчик фронтально, дверца приоткрыта, полки видны.", p:"a small wall ration locker shot straight on with its door ajar, two shelves inside, warm bulb light spilling out, dark wall around, the shelves sparsely stocked"},
+    {f:"obj-condensed-milk.png", kind:"obj", size:"1024×1024 · PNG α", t:"Сгущёнка", n:"Главная награда полярника.", p:"a dented tin of condensed milk with a blank blue and white label, two triangular punch holes in the lid, three quarter view"},
+    {f:"obj-chocolate.png", kind:"obj", size:"1024×1024 · PNG α", t:"Шоколад", n:"", p:"a bar of dark chocolate in torn foil with two squares broken off, three quarter view"},
+    {f:"obj-canned.png", kind:"obj", size:"1024×1024 · PNG α", t:"Консервы", n:"", p:"a plain tin can of preserved meat with a blank label and a key soldered to the lid, three quarter view"},
+    {f:"obj-hasp-key.png", kind:"obj", size:"1024×1024 · PNG α", t:"Замок и ключ", n:"Открывается только с закрытой задачей в руке.", p:"a small brass padlock hanging open on a hasp with a key still in it, front view, isolated"}
+  ]
+},
+{
+  id:"g10", nav:"Игра · Дай слово", eyebrow:["Игра 10","публичное обязательство"],
+  title:"Выйди на связь",
+  lead:"Игрок называет срок вслух — и выбирает, кому: никому, начальству, приятелю на соседней станции или тому, кто ему нравится. Шансы меняются на глазах, и сильнее всего приём работает в последнем случае. На выходе — готовый текст обещания, который можно скопировать и правда отправить.",
+  items:[
+    {f:"scene-mic-closeup.jpg", kind:"int", size:"1920×1080 · JPEG", t:"Сцена игры", n:"Тангента крупно, палец на кнопке, за ней — размытая рубка.", p:"extreme close-up of a hand holding a push-to-talk microphone with the thumb resting on the button, the radio room out of focus behind, warm dial glow, shallow depth of field"},
+    {f:"char-face-chief.png", kind:"char", size:"1024×1024 · PNG α", t:"Портрет · начальство", n:"Четыре погрудных портрета в одном ракурсе и масштабе — станут кружками выбора.", p:"bust portrait of a weathered woman in her fifties with a grey braid and a thick sweater, calm demanding look, plain three quarter view, head and shoulders only"},
+    {f:"char-face-friend.png", kind:"char", size:"1024×1024 · PNG α", t:"Портрет · приятель", n:"", p:"bust portrait of a cheerful bearded man in his thirties in a knitted hat and headphones round his neck, plain three quarter view, head and shoulders only, identical framing"},
+    {f:"char-face-crush.png", kind:"char", size:"1024×1024 · PNG α", t:"Портрет · тот, кто нравится", n:"Самый сильный вариант — и это должно читаться по лицу.", p:"bust portrait of a smiling young person with short dark hair and a headset, warm friendly expression, plain three quarter view, head and shoulders only, identical framing"},
+    {f:"char-face-crew.png", kind:"char", size:"1024×1024 · PNG α", t:"Портрет · вся смена", n:"Групповой кружок: обещание в общий чат.", p:"bust portrait of three people crowded into one frame shoulder to shoulder in winter clothes, looking at the viewer, plain view, heads and shoulders only, identical framing"}
+  ]
+},
+{
+  id:"final", nav:"Конструктор", eyebrow:["Финал","личный распорядок"],
+  title:"Распорядок вахты",
+  lead:"Не игра, а то, ради чего курс: заполненный бланк с часами, слотами, днями по типам, запасом и личными целями. Валидатор спорит — десять часов работы без перерывов не принимает, ноль личных целей просит дописать. На выходе .txt и .ics, который прямо из курса импортируется в календарь. Плюс напоминание через три месяца, как просит опорник.",
+  items:[
+    {f:"scene-plan-table.jpg", kind:"int", size:"1920×1080 · JPEG", t:"Сцена", n:"Стол с бланком под лампой, место в центре свободно под поля ввода.", p:"a desk under a lamp seen from directly above, a large blank printed form lying in the centre with empty boxes and no writing, a pencil and a rubber stamp beside it, dark wood around the edges"},
+    {f:"obj-stamp.png", kind:"obj", size:"1024×1024 · PNG α", t:"Штамп", n:"Печать, которая ставится, когда распорядок прошёл проверку.", p:"a wooden handled rubber stamp standing upright next to a red ink pad, the rubber face blank, three quarter view"},
+    {f:"obj-form-plan.png", kind:"obj", size:"1024×1024 · PNG α", t:"Бланк распорядка", n:"Пустой, с рамками — строки нарисуем версткой.", p:"a large blank printed schedule form with empty ruled boxes and columns, no handwriting, slightly yellowed paper, top down view"}
+  ]
+},
+{
+  id:"chars", nav:"Персонажи", eyebrow:["Персонажи","новые, ни один не из прошлого курса"],
+  title:"Кто на станции",
+  lead:"Трое. Игрок — новичок на первой зимовке, есть женский и мужской вариант. Начальство — женщина за пятьдесят, её репликами идут заметки на полях. И пёс: он подсказывает, шутит и один раз, в блоке про паузы, просто уводит гулять. Сначала генерируется лист, потом с него — отдельные состояния.",
+  items:[
+    {f:"sheet-char-you-f.png", kind:"sheet", size:"2048×2048 · PNG α", t:"Лист · игрок (женский вариант)", n:"Три ракурса плюс мимика. С него снимаются все позы ниже.", p:"character sheet of one young woman about twenty eight, short practical hair, freckles, canvas work overalls over a checked shirt: full body front view, three quarter view and side view in a row, plus four head close-ups below showing neutral, talking, tired and pleased, consistent proportions and identical height across all views"},
+    {f:"sheet-char-you-m.png", kind:"sheet", size:"2048×2048 · PNG α", t:"Лист · игрок (мужской вариант)", n:"Тот же костюм и тот же рост, чтобы позы были взаимозаменяемы.", p:"character sheet of one young man about twenty eight, cropped hair, stubble, canvas work overalls over a checked shirt: full body front view, three quarter view and side view in a row, plus four head close-ups below showing neutral, talking, tired and pleased, consistent proportions and identical height across all views"},
+    {f:"sheet-char-chief.png", kind:"sheet", size:"2048×2048 · PNG α", t:"Лист · начальство", n:"Голос опыта. Её реплики — заметки на полях курса.", p:"character sheet of one weathered woman in her fifties, grey hair in a braid, deep laugh lines, a stretched wool sweater and a mug in hand: full body front view, three quarter view and side view in a row, plus four head close-ups below showing neutral, talking, sceptical and approving, consistent proportions and identical height across all views"},
+    {f:"sheet-char-dog.png", kind:"sheet", size:"2048×2048 · PNG α", t:"Лист · пёс станции", n:"Лайка. Маскот курса: подсказки, шутки и приглашение выйти на паузу.", p:"character sheet of one husky-type sled dog with a thick grey and white coat and one ear slightly bent: side view, front view and three quarter view in a row, plus four poses below sitting, lying down, head tilted and barking, consistent size across all views"},
+    {f:"char-you-f-idle.png", kind:"char", size:"1024×1536 · PNG α", t:"Игрок · спокойно", n:"Базовая поза для диалогов. Ноги на одной высоте во всех кадрах, иначе персонаж будет прыгать при смене.", p:"the same young woman from the character sheet, standing relaxed with arms at her sides, neutral expression, mouth closed"},
+    {f:"char-you-f-talk.png", kind:"char", size:"1024×1536 · PNG α", t:"Игрок · говорит", n:"Показывается во время реплики.", p:"the same young woman, mouth open mid-sentence, one hand raised in a small gesture, identical height and foot position"},
+    {f:"char-you-f-blink.png", kind:"char", size:"1024×1536 · PNG α", t:"Игрок · моргает", n:"Подставляется в паузах, оживляет статичную сцену.", p:"the same young woman, eyes closed, calm face, arms at her sides, identical height and foot position"},
+    {f:"char-you-f-tired.png", kind:"char", size:"1024×1536 · PNG α", t:"Игрок · вымотан", n:"Появляется, когда игрок переработал — визуальный штраф вместо цифры.", p:"the same young woman, shoulders dropped, head slightly lowered, rubbing her eyes with one hand, identical height and foot position"},
+    {f:"char-you-f-glad.png", kind:"char", size:"1024×1536 · PNG α", t:"Игрок · доволен", n:"Финал удачного дня и награда из НЗ.", p:"the same young woman, standing straight, small satisfied smile, hands on hips, identical height and foot position"},
+    {f:"char-chief-idle.png", kind:"char", size:"1024×1536 · PNG α", t:"Начальство · спокойно", n:"Полный набор состояний повторяется и для мужского варианта игрока — по тем же формулировкам.", p:"the same woman in her fifties from her character sheet, standing with a mug in one hand, calm attentive expression"},
+    {f:"char-chief-talk.png", kind:"char", size:"1024×1536 · PNG α", t:"Начальство · говорит", n:"", p:"the same woman in her fifties, mouth open mid-sentence, gesturing with the mug, identical height and foot position"},
+    {f:"char-chief-sceptic.png", kind:"char", size:"1024×1536 · PNG α", t:"Начальство · сомневается", n:"Реакция на переработку и на пустой график.", p:"the same woman in her fifties, one eyebrow raised, arms folded, sceptical look, identical height and foot position"},
+    {f:"char-dog-sit.png", kind:"char", size:"1024×1024 · PNG α", t:"Пёс · сидит", n:"Базовый кадр для заметок на полях.", p:"the same husky-type dog from its sheet, sitting, side view, looking towards the viewer, ears up"},
+    {f:"char-dog-tilt.png", kind:"char", size:"1024×1024 · PNG α", t:"Пёс · склонил голову", n:"Для подсказок и вопросов.", p:"the same dog, sitting with its head tilted to one side, identical size and view"},
+    {f:"char-dog-lying.png", kind:"char", size:"1024×1024 · PNG α", t:"Пёс · лежит", n:"Вечерние блоки, кают-компания.", p:"the same dog, lying down with its head on its paws, eyes half closed, identical size and view"},
+    {f:"char-dog-bark.png", kind:"char", size:"1024×1024 · PNG α", t:"Пёс · зовёт гулять", n:"Блок паузы: единственный момент, когда пёс перебивает курс.", p:"the same dog, standing with front legs low and rear up in a play bow, mouth open barking, tail up, identical size and view"}
+  ]
+},
+{
+  id:"fx", nav:"Оверлеи", eyebrow:["Оверлеи","поверх всего"],
+  title:"Иней, сияние, снег",
+  lead:"Слои, которые кладутся поверх сцен и держат курс в одной атмосфере при любой картинке под ними. Все — прозрачные PNG, тайлятся или растягиваются на весь экран.",
+  items:[
+    {f:"fx-frost-edges.png", kind:"fx", size:"1920×1080 · PNG α", t:"Иней по краям кадра", n:"Кладётся на все рабочие блоки, центр остаётся чистым под текст.", p:"a frame of delicate frost crystals growing inward from the edges of a rectangle, dense at the corners and thinning to nothing towards the centre, the middle completely clear, white on transparent"},
+    {f:"fx-aurora.png", kind:"fx", size:"2048×1024 · PNG α", t:"Лента сияния", n:"Акцент на переходах между блоками и на паузе. Единственный оверлей не в холодной гамме.", p:"a single soft ribbon of aurora light, pale green fading to teal at the edges, vertical streaks within it, soft glow, fully transparent around it"},
+    {f:"fx-snow.png", kind:"fx", size:"1024×1024 · PNG α", t:"Снежная крошка", n:"Бесшовный тайл, гоняется анимацией. Разный размер частиц, иначе видна сетка.", p:"a seamless tile of scattered snow particles of varying sizes on transparent background, soft round grains and a few sharp flakes, evenly distributed with no visible clusters or rows"},
+    {f:"fx-condensation.png", kind:"fx", size:"1920×1080 · PNG α", t:"Конденсат на стекле", n:"Для кадров, снятых будто из окна модуля.", p:"a layer of condensation droplets and runs on a glass pane, some drops sliding down leaving trails, uneven density, transparent between the droplets"},
+    {f:"fx-grain.png", kind:"fx", size:"1024×1024 · PNG α", t:"Зерно", n:"Бесшовный тайл поверх всего курса — он же прячет швы генерации.", p:"a seamless fine film grain texture, monochrome, very low contrast, no pattern or banding"}
+  ]
+},
+{
+  id:"no", nav:"Не генерировать", eyebrow:["Граница","чтобы не тратить генерации"],
+  title:"Это рисуется кодом, а не генератором",
+  lead:"",
+  html:`<ul class="plain">
+    <li><b>Интерфейсные иконки</b> — стрелки, галочки, крестики, часы в шапке, полосы прогресса. Вектором в разметке: они должны быть чёткими на любом экране и перекрашиваться под акцент блока.</li>
+    <li><b>Любой текст на картинке</b> — подписи к предметам, цифры на шкале, названия в расписании, надписи на бланках. Всё поверх, HTML-текстом.</li>
+    <li><b>Свечение и подсветка</b> — шкала приёмника, экран монитора, лампа под нужным кельвином. Предметы генерируются погашенными, свет добавляется css-градиентом, иначе температуру нельзя будет крутить.</li>
+    <li><b>Тени под предметами</b> в играх с перетаскиванием — рисуются кодом, иначе тень уедет вместе с картинкой и предмет повиснет в воздухе.</li>
+    <li><b>Сетки и линейки</b> — расписание, таймлайн, разлиновка журнала. Это интерфейс, а не декорация.</li>
+  </ul>
+  <div class="note"><b>Порядок сборки.</b> Сначала фоны блоков — на них уже можно верстать курс и читать текст. Потом сцены и предметы одиннадцати тренажёров, по одному за подход. Персонажи — последними: к этому моменту будет видно, в каких позах они реально нужны, и не придётся генерировать лишнее.</div>`
+}
+];
+
+/* ── отрисовка ─────────────────────────────────────── */
+const nav = document.getElementById("nav");
+const main = document.getElementById("main");
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+let total = 0;
+const EVERY = [];
+
+const tokensHtml = () => {
+  const rows = [
+    ["STYLE · экстерьеры", S.scene.trim()],
+    ["STYLE · интерьеры", S.int.trim()],
+    ["STYLE · предметы", S.obj.trim()],
+    ["STYLE · персонажи", S.char.trim()],
+    ["STYLE · листы иконок", S.sheet.trim()],
+    ["STYLE · оверлеи", S.fx.trim()],
+    ["NEGATIVE · во все без исключения", NEG]
+  ].map(([t,v]) => `<div class="token"><div class="row1"><span class="fname">${esc(t)}</span>
+    <button class="copy" data-copy="${esc(v)}" type="button">Скопировать</button></div>
+    <div class="p">${esc(v)}</div></div>`).join("");
+  const sw = [
+    ["#0A1420","Полярная ночь","фон курса"],
+    ["#12263A","Стальной синий","панели, тени"],
+    ["#BFD9E8","Холодный свет 5000 K","рабочие блоки"],
+    ["#F2B441","Тёплая лампа 2700 K","вечер, награды"],
+    ["#5FD3A0","Сияние","акцент, зелень опорника"],
+    ["#D6E7F2","Лёд","текст"]
+  ].map(([hex,name,role]) => `<div class="sw"><i style="background:${hex}"></i><div><b>${name}</b><code>${hex} · ${role}</code></div></div>`).join("");
+  return rows + `<div class="swatches">${sw}</div>
+    <div class="note"><b>Проверка палитрой.</b> Если в готовом кадре нет ни одного тёплого пятна, он мёртвый; если тёплого больше четверти кадра — это уже не станция, а уют. Сияние — единственный насыщенный цвет, и оно работает только там, где его мало.</div>`;
+};
+
+DATA.forEach(sec => {
+  const a = document.createElement("a");
+  a.href = "#" + sec.id; a.textContent = sec.nav; nav.appendChild(a);
+
+  const el = document.createElement("section");
+  el.id = sec.id;
+  let inner = `<div class="sec-head">
+      <div class="eyebrow"><span>${esc(sec.eyebrow[0])}</span><span>${esc(sec.eyebrow[1])}</span></div>
+      <h2>${esc(sec.title)}</h2>
+      ${sec.lead ? `<p class="lead">${esc(sec.lead)}</p>` : ""}
+    </div>`;
+
+  if (sec.tokens) inner += tokensHtml();
+  if (sec.html) inner += sec.html;
+
+  if (sec.items) {
+    const all = [];
+    const cards = sec.items.map(it => {
+      const full = S[it.kind] + it.p + "\n" + NEG;
+      all.push(it.f + "\n" + full);
+      EVERY.push(it.f + "\n" + full);
+      total++;
+      return `<article class="item ${it.kind}" data-f="${esc(it.f)}">
+        <button class="tick" type="button" aria-pressed="false" aria-label="Отметить ${esc(it.f)} как готовый"></button>
+        <div class="row1">
+          <span class="fname">${esc(it.f)}</span>
+          <span class="chip">${esc(it.size)}</span>
+          ${it.k ? `<span class="chip k">${esc(it.k)}</span>` : ""}
+          <button class="copy" data-copy="${esc(full)}" type="button">Скопировать</button>
+        </div>
+        <p class="t">${esc(it.t)}</p>
+        ${it.n ? `<p class="n">${esc(it.n)}</p>` : ""}
+        <div class="p">${esc(it.p)}</div>
+      </article>`;
+    }).join("");
+    inner += `<div class="sec-tools"><button class="copy" data-copy="${esc(all.join("\n\n"))}" type="button">Скопировать все ${sec.items.length} промптов блока</button></div>
+      <div class="items">${cards}</div>`;
+  }
+  el.innerHTML = inner;
+  main.appendChild(el);
+});
+document.getElementById("total").textContent = total;
+const everyBtn = document.getElementById("copyall");
+everyBtn.setAttribute("data-copy", EVERY.join("\n\n"));
+everyBtn.textContent = "Скопировать все " + total + " промптов";
+
+/* ── копирование ───────────────────────────────────── */
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copy");
+  if (!b) return;
+  const txt = b.getAttribute("data-copy");
+  const done = () => {
+    const was = b.textContent;
+    b.textContent = "Скопировано"; b.classList.add("ok");
+    setTimeout(() => { b.textContent = was; b.classList.remove("ok"); }, 1400);
+  };
+  try {
+    navigator.clipboard.writeText(txt).then(done, () => fallback(txt, done));
+  } catch (_) { fallback(txt, done); }
+});
+function fallback(txt, done){
+  try{
+    const ta = document.createElement("textarea");
+    ta.value = txt; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); done();
+  }catch(_){ /* буфер недоступен — текст всё равно можно выделить руками */ }
+}
+
+/* ── чек-лист ──────────────────────────────────────── */
+const KEY = "station-assets-done";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (_) { state = {}; }
+
+function paint(){
+  let n = 0;
+  document.querySelectorAll(".item").forEach(it => {
+    const on = !!state[it.dataset.f];
+    if (on) n++;
+    it.classList.toggle("done", on);
+    it.querySelector(".tick").setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  document.getElementById("done").textContent = n;
+  document.getElementById("bar").style.width = total ? (n / total * 100) + "%" : "0%";
+}
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (_) {} }
+
+document.addEventListener("click", e => {
+  const t = e.target.closest(".tick");
+  if (!t) return;
+  const f = t.closest(".item").dataset.f;
+  if (state[f]) delete state[f]; else state[f] = 1;
+  save(); paint();
+});
+document.getElementById("reset").addEventListener("click", () => { state = {}; save(); paint(); });
+paint();
+</script>

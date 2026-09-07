@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Первая партия — Смена на станции</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Golos+Text:wght@400;500&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+  :root{
+    --night:#0A1420; --panel:#0E1B27; --line:#1E3346; --line-soft:#17293a;
+    --ice:#D6E7F2; --dim:#93AABF; --faint:#6B8299;
+    --amber:#F2B441; --aurora:#5FD3A0; --cold:#BFD9E8; --alarm:#E2705A;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--night);color:var(--ice);
+    font-family:"Golos Text","Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.6}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 24px 90px}
+  header{border-bottom:1px solid var(--line);margin-bottom:8px}
+  .hin{max-width:1280px;margin:0 auto;padding:28px 24px 22px}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint)}
+  h1{font-family:"Oswald","Arial Narrow",sans-serif;font-weight:600;text-transform:uppercase;
+    letter-spacing:.035em;font-size:clamp(28px,4.6vw,42px);line-height:1.04;margin:.3em 0 .2em}
+  h1 span{color:var(--dim);font-weight:400}
+  .sub{max-width:68ch;color:var(--dim);margin:0}
+  h2{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.03em;
+    font-size:24px;margin:56px 0 4px;padding-top:18px;border-top:1px solid var(--line)}
+  .lead{max-width:70ch;color:var(--dim);margin:0 0 22px}
+  figure{margin:0 0 26px}
+  figure img{width:100%;height:auto;display:block;border:1px solid var(--line-soft);background:var(--panel)}
+  figcaption{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-top:9px}
+  .fn{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--cold)}
+  .tag{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;
+    border:1px solid var(--line);border-radius:99px;padding:1px 9px;color:var(--faint)}
+  .tag.ok{color:var(--aurora);border-color:rgba(95,211,160,.4)}
+  .tag.bad{color:var(--alarm);border-color:rgba(226,112,90,.4)}
+  .tag.wait{color:var(--amber);border-color:rgba(242,180,65,.4)}
+  .why{flex-basis:100%;color:var(--dim);font-size:14.5px;max-width:74ch;margin:2px 0 0}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:820px){.pair{grid-template-columns:1fr}}
+  footer{margin-top:60px;padding-top:16px;border-top:1px solid var(--line);color:var(--faint);font-size:14px}
+  code{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--cold)}
+</style>
+</head>
+<body>
+<header><div class="hin">
+  <div class="eyebrow">Курс «Смена на станции» · проба стиля 05.09.2026 · z_image, 0,15 кредита за кадр</div>
+  <h1>Первая партия <span>— 7 кадров</span></h1>
+  <p class="sub">Пять кадров первого захода на общем стилевом токене и две пересъёмки после того, как выяснилось, что этот токен ломает интерьеры. Кликните по картинке, чтобы открыть её в полный размер.</p>
+</div></header>
+
+<div class="wrap">
+
+  <h2>Получилось сразу</h2>
+  <p class="lead">Экстерьеры модель понимает с первого раза: живописный мазок, ледяная синева, тёплое окно, сияние. Обложка годится как кадр-эталон — именно её нужно подавать референсом ко всем остальным сценам.</p>
+
+  <figure>
+    <a href="исходники/сцены/test-bg-00-cover.png" target="_blank" rel="noopener">
+      <img src="исходники/сцены/test-bg-00-cover.png" alt="Станция ночью под сиянием, одно окно горит"></a>
+    <figcaption><span class="fn">bg-00-cover</span><span class="tag ok">эталон</span><span class="tag">обложка · 08:40</span>
+      <p class="why">Ровно та интонация, которая нужна курсу: пусто, холодно, и одно тёплое окно. С этого кадра снимается стиль всей серии.</p>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <a href="исходники/сцены/test-bg-06-outside.png" target="_blank" rel="noopener">
+      <img src="исходники/сцены/test-bg-06-outside.png" alt="Вид от двери станции, сияние во всё небо, следы на снегу"></a>
+    <figcaption><span class="fn">bg-06-outside</span><span class="tag ok">годится</span><span class="tag">пауза · 13:00</span>
+      <p class="why">Кадр, на котором курс на минуту гаснет. Единственная придирка: в дверях появился человек, хотя в промпте стояло «no people» — в токен экстерьеров добавлено <code>completely deserted, nobody in frame</code>, персонажи ставятся отдельными PNG.</p>
+    </figcaption>
+  </figure>
+
+  <h2>Было / стало</h2>
+  <p class="lead">Слова <code>polar night, aurora, snow</code> из общего токена модель применяла к комнате буквально: снег на полу, сияние над столом, стены исчезали. Интерьерный токен теперь прямо запрещает небо, сияние и снег внутри и оставляет полярную ночь только за оконным стеклом.</p>
+
+  <div class="pair">
+    <figure>
+      <a href="исходники/сцены/test-bg-02-desk.png" target="_blank" rel="noopener">
+        <img src="исходники/сцены/test-bg-02-desk.png" alt="Стол с лампой, но комната без стен, снег на полу"></a>
+      <figcaption><span class="fn">test-bg-02-desk</span><span class="tag bad">сломано</span>
+        <p class="why">Аппаратная без стен и крыши, снег внутри, сияние прямо над столом.</p>
+      </figcaption>
+    </figure>
+    <figure>
+      <a href="исходники/сцены/fix-bg-02-desk.png" target="_blank" rel="noopener">
+        <img src="исходники/сцены/fix-bg-02-desk.png" alt="Закрытая комната с деревянными стенами, стол под лампой, приборы на полке"></a>
+      <figcaption><span class="fn">fix-bg-02-desk</span><span class="tag ok">исправлено</span>
+        <p class="why">Стены, потолок, сухой пол, приборы на полке, иней на стёклах. Ушло в тёплое дерево сильнее, чем нужно: для рабочих часов в промпт стоит добавить доминанту холодного света.</p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="pair">
+    <figure>
+      <a href="исходники/сцены/test-bg-11-ether.png" target="_blank" rel="noopener">
+        <img src="исходники/сцены/test-bg-11-ether.png" alt="Приёмник на тумбочке посреди снежного поля"></a>
+      <figcaption><span class="fn">test-bg-11-ether</span><span class="tag bad">сломано</span>
+        <p class="why">Приёмник стоит на тумбе посреди снежного поля. Красиво — и мимо: это должен быть интерьер радиорубки.</p>
+      </figcaption>
+    </figure>
+    <figure>
+      <a href="исходники/сцены/fix-bg-11-ether.png" target="_blank" rel="noopener">
+        <img src="исходники/сцены/fix-bg-11-ether.png" alt="Радиорубка изнутри, приёмник на столе под лампой, ночь за окном"></a>
+      <figcaption><span class="fn">fix-bg-11-ether</span><span class="tag ok">исправлено</span>
+        <p class="why">Комната закрылась, ночь и сияние остались за окном, шкала светится. Справа есть свободное место — туда ляжет бланк метеосводки из игры «Эфир».</p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <h2>Остался незакрытым</h2>
+  <p class="lead">Пересъёмка коридора не прошла: бесплатный план поймал рейт-лимит, две генерации подряд упали с ошибкой 429. Кредиты за них не списались.</p>
+
+  <figure>
+    <a href="исходники/сцены/test-bg-01-boundaries.png" target="_blank" rel="noopener">
+      <img src="исходники/сцены/test-bg-01-boundaries.png" alt="Коридор станции с часами и парками, но пол засыпан снегом"></a>
+    <figcaption><span class="fn">test-bg-01-boundaries</span><span class="tag wait">переснять</span><span class="tag">границы дня · 09:00</span>
+      <p class="why">Мысль читается: две двери, часы над одной, парки на крючках, тёплый свет из-под двери напротив холодного коридора — это и есть блок про границы. Но пол засыпан снегом, а в глубине коридор открыт в ночь с сиянием. Промпт уже исправлен, нужна только генерация.</p>
+    </figcaption>
+  </figure>
+
+  <footer>
+    Файлы: <code>исходники/сцены/</code>, 2048×1152 PNG. Промпты и весь список ассетов — в <code>промпты.html</code> рядом.
+  </footer>
+</div>
+</body>
+</html>
