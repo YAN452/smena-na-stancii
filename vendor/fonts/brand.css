@@ -1,0 +1,7 @@
+/* Фирменные шрифты курса. Исходники — в бренд/, распакованы автоматически. */
+
+@font-face{font-family:"Greengoth";src:url("Greengoth.ttf") format("truetype");font-weight:400 700;font-display:swap}
+@font-face{font-family:"GreengothNarrow";src:url("GreengothNarrow.ttf") format("truetype");font-weight:400 700;font-display:swap}
+@font-face{font-family:"Tovar";src:url("Tovar.otf") format("opentype");font-weight:400 700;font-display:swap}
+@font-face{font-family:"Mephisto";src:url("Mephisto.otf") format("opentype");font-weight:400 700;font-display:swap}
+@font-face{font-family:"BubbleSans";src:url("BubbleSans.otf") format("opentype");font-weight:400 700;font-display:swap}

@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Смена на станции — курс по работе на удалёнке</title>
+<link rel="stylesheet" href="vendor/fonts/fonts.css">
+<link rel="stylesheet" href="vendor/fonts/brand.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="film" id="film" aria-hidden="true"></div>
+
+<header class="bar" id="bar">
+  <button class="bar__menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Список блоков">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="bar__clock"><span id="clock">08:40</span></div>
+  <div class="bar__now" id="now">Смена на станции</div>
+  <div class="tokens" id="tokens" title="Жетоны за пройденные тренажёры">
+    <span class="tokens__n"><b id="tok-n">0</b>/11</span>
+    <span class="tokens__dots" id="tok-dots"></span>
+  </div>
+  <button class="bar__snd" id="snd" type="button" aria-pressed="true" title="Звук" aria-label="Звук">♪</button>
+  <div class="bar__progress"><i id="progress"></i></div>
+</header>
+
+<nav class="menu" id="menu" hidden>
+  <ol><li><a href="#b1"><span class="menu__time">08:40</span><span class="menu__name">Смена на станции</span></a></li>
+    <li><a href="#b2"><span class="menu__time">09:00</span><span class="menu__name">Поставь границы смены</span></a></li>
+    <li><a href="#b3"><span class="menu__time">09:30</span><span class="menu__name">Собери себе место</span></a></li>
+    <li><a href="#b4"><span class="menu__time">10:00</span><span class="menu__name">Выбери, в чём работать</span></a></li>
+    <li><a href="#b5"><span class="menu__time">10:30</span><span class="menu__name">Разбей смену на слоты</span></a></li>
+    <li><a href="#b6"><span class="menu__time">12:00</span><span class="menu__name">Выгрузи задачи из головы</span></a></li>
+    <li><a href="#b7"><span class="menu__time">13:00</span><span class="menu__name">Обед</span></a></li>
+    <li><a href="#b8"><span class="menu__time">14:00</span><span class="menu__name">Спланируй неделю и оставь запас</span></a></li>
+    <li><a href="#b9"><span class="menu__time">15:00</span><span class="menu__name">Сложи похожее в один день</span></a></li>
+    <li><a href="#b10"><span class="menu__time">15:30</span><span class="menu__name">Разгреби занос</span></a></li>
+    <li><a href="#b11"><span class="menu__time">16:00</span><span class="menu__name">Дай слово</span></a></li>
+    <li><a href="#b12"><span class="menu__time">16:30</span><span class="menu__name">Назначь заклятого врага</span></a></li>
+    <li><a href="#b13"><span class="menu__time">17:00</span><span class="menu__name">Подбери фон</span></a></li>
+    <li><a href="#b14"><span class="menu__time">17:30</span><span class="menu__name">Награди себя</span></a></li>
+    <li><a href="#b15"><span class="menu__time">18:00</span><span class="menu__name">Закрой вахту</span></a></li>
+    <li><a href="#b16"><span class="menu__time">вечер</span><span class="menu__name">Отдыхай наоборот</span></a></li>
+    <li><a href="#b17"><span class="menu__time">вечер</span><span class="menu__name">Меняй обстановку</span></a></li>
+    <li><a href="#b18"><span class="menu__time">вечер</span><span class="menu__name">Делай паузы</span></a></li>
+    <li><a href="#b19"><span class="menu__time">выходные</span><span class="menu__name">Впиши личные цели</span></a></li>
+    <li><a href="#b20"><span class="menu__time">через 3 месяца</span><span class="menu__name">Вернись и сравни</span></a></li></ol>
+</nav>
+
+<main>
+<section class="block cover" id="b1" data-n="1" data-time="08:40"
+  data-title="Смена на станции" data-bright="0.247" style="--bg:url('assets/bg-00-cover.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">08:40</span><span class="hero__kelvin">полярная ночь</span></p>
+      <h2 class="hero__title">Смена на станции</h2>
+      <p class="hero__lead">Курс о работе на удалёнке. Одна вахта: с 09:00 до 18:00 — и вечер, который принадлежит вам.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Полярная ночь идёт третий месяц. Здесь не бывает рассвета, который скажет, что рабочий день начался, и гудка, который скажет, что он кончился. Всё это решает человек внутри модуля.</p></div></div>
+<div class="beat" data-pos="br"><div class="beat__in"><p class="">Ровно то же самое происходит с вами дома. Дверь в комнату — не проходная. Никто не заметит, что вы сели в семь утра, и никто не выгонит вас в шесть вечера.</p></div></div>
+<div class="beat" data-pos="t"><div class="beat__in"><p class="">Дальше — шестнадцать приёмов, разложенных по часам одной смены. Половину из них вы не прочитаете, а попробуете: где стоит тренажёр, объяснение открывается только после того, как вы сыграли.</p></div></div>
+</section>
+
+<section class="block " id="b2" data-n="2" data-time="09:00"
+  data-title="Поставь границы смены" data-bright="0.204" style="--bg:url('assets/bg-01-boundaries.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__part">Часть первая · Как держать смену</p>      <p class="hero__meta"><span class="hero__time">09:00</span><span class="hero__num">Приём 1 из 16</span><span class="hero__kelvin">4000 K</span></p>
+      <h2 class="hero__title">Поставь границы смены</h2>
+      <p class="hero__lead">Начнём с того, без чего не работает ничто другое: с краёв рабочего дня.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">В коридоре темно. Слева дверь в жилой отсек, справа — в аппаратную. Между ними полтора метра и круглые часы над притолокой. Вся разница между работой и жизнью здесь — это выбор двери и время на циферблате.</p></div></div>
+<div class="beat" data-pos="tl"><div class="beat__in"><p class="punch">Первое, что нужно определить, — сколько часов длится смена и когда она начинается и заканчивается. Возьмём для примера с девяти до шести.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="">Это значит: что бы ни происходило вокруг, вы садитесь за работу <b class="hl">ровно в девять</b> и <b class="hl">полностью отключаетесь</b> <b class="hl">в восемнадцать</b>. Как если бы вышли из офиса и уехали.</p></div></div>
+<div class="beat" data-pos="b"><div class="beat__in"><p class="punch">День закончился — компьютер недоступен, рабочие приложения не открыть.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="">У каждого дня появляется край. На него можно опираться, чтобы закрывать задачи, а не откладывать их в бесконечное «чуть попозже». И раз конец обозначен, вы перестаёте перерабатывать и начинаете планировать вечер.</p></div></div>
+<div class="beat" data-pos="b"><div class="beat__in"><p class="punch">Часы можно выбрать любые. Важны пропорции.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><div class="cards">
+    <div class="card"><b>8 часов</b><span>работы, не больше</span></div>
+    <div class="card"><b>1 час</b><span>на обед, целиком вне работы</span></div>
+    <div class="card"><b>2–4</b><span>коротких перерыва, число выбрано заранее</span></div>
+  </div></div></div>
+<div class="beat" data-pos="bl"><div class="beat__in"><p class="punch">И следите, чтобы выбранный график не мешал вам жить за его границами. Смена существует ради того, чтобы у неё был конец.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><aside class="note"><img class="note__face" src="assets/char-chief-face-idle.png" alt="Начальство" loading="lazy"><div class="note__text"><b>Начальство</b>Здесь нет вахтёра и нет гудка. В девять начинается смена, потому что так решили вы. Другой причины не будет.</div></aside></div></div>
+</section>
+
+<section class="block " id="b3" data-n="3" data-time="09:30"
+  data-title="Собери себе место" data-bright="0.184" style="--bg:url('assets/bg-02-desk.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">09:30</span><span class="hero__num">Приём 2 из 16</span><span class="hero__kelvin">5000 K</span></p>
+      <h2 class="hero__title">Собери себе место</h2>
+      <p class="hero__lead">Границы поставлены. Теперь угол, в котором эти часы будут проходить.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Аппаратная выстыла за ночь. На стекле — иней в палец толщиной, на столе пусто, лампа выключена. С этого пустого стола начинается всё остальное.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="">Для работы нужно полноценное место. Большой монитор и хорошая периферия дают лучшую эргономику и позволяют меньше уставать. Отдельный угол только для работы разграничивает профессиональное и личное надёжнее любого расписания. Отдельное внимание — мебели и свету.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><aside class="note"><img class="note__face" src="assets/char-chief-face-idle.png" alt="Начальство" loading="lazy"><div class="note__text"><b>Начальство</b>В рабочей зоне ставьте холодный свет — он помогает сосредоточиться. Лампы с температурой 4000–5000 кельвинов. Тёплый свет отлично убаюкивает, и в рабочее время это ровно то, что нам не нужно.</div></aside></div></div>
+<div class="beat" data-pos="tr"><div class="beat__in"><p class="">Найдите место, где отвлекающих факторов будет минимум. Докупите недостающее. Задача — собрать полноценный мини-офис прямо дома, а не пристроить ноутбук на краю кухонного стола.</p></div></div>
+<div class="beat beat--stage" data-stage="room" data-name="Аппаратная" data-scene="scene-empty-corner" data-bright="0.208">  <div class="stage">    <p class="stage__intro">Обставьте угол модуля и покрутите лампу от 2000 до 6500 K. Сцена перекрашивается на глазах, фокус-метр отзывается. Койка и приёмник вплотную к столу роняют счёт.</p>    <div class="stage__play" data-play="room"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="room" hidden></div>
+</section>
+
+<section class="block " id="b4" data-n="4" data-time="10:00"
+  data-title="Выбери, в чём работать" data-bright="0.161" style="--bg:url('assets/bg-03-locker.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">10:00</span><span class="hero__num">Приём 3 из 16</span><span class="hero__kelvin">2700 K</span></p>
+      <h2 class="hero__title">Выбери, в чём работать</h2>
+      <p class="hero__lead">Место готово. Осталась деталь, которую обычно считают ерундой.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">В шкафу висят четыре комплекта. Термобельё с пледом, свитер, рабочая роба, парка. Никто на станции не увидит, что вы выбрали. И именно поэтому выбор имеет значение.</p></div></div>
+<div class="beat" data-pos="l"><div class="beat__in"><p class="punch">Одежда формирует самоощущение, нравится вам это или нет. В строгом костюме и в домашней пижаме вы ощущаете себя и мир вокруг по-разному.</p></div></div>
+<div class="beat" data-pos="br"><div class="beat__in"><p class="punch">Речь не о галстуке: работать нужно в том, в чём вы могли бы свободно встать и выйти на улицу, не собирая недоуменных взглядов.</p></div></div>
+<div class="beat" data-pos="br"><div class="beat__in"><p class="punch">Удобно — но при этом красиво и чисто. Через такие мелочи и складывается отношение к работе.</p></div></div>
+<div class="beat beat--stage" data-stage="skins" data-name="Скины" data-scene="" data-bright="0.2">  <div class="stage">    <p class="stage__intro">Четыре комплекта на одном человеке и полоса самоощущения, которая на них отзывается.</p>    <div class="stage__play" data-play="skins"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="skins" hidden></div>
+</section>
+
+<section class="block " id="b5" data-n="5" data-time="10:30"
+  data-title="Разбей смену на слоты" data-bright="0.188" style="--bg:url('assets/bg-04-board.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">10:30</span><span class="hero__num">Приём 4 из 16</span><span class="hero__kelvin">5000 K</span></p>
+      <h2 class="hero__title">Разбей смену на слоты</h2>
+      <p class="hero__lead">Дальше — как устроены сами восемь часов внутри.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">На стене магнитная доска, разграфлённая по получасам. Пустая она выглядит как обещание: восемь часов, которые можно потратить как угодно. Через час выяснится, что «как угодно» — это и есть ловушка.</p></div></div>
+<div class="beat" data-pos="r"><div class="beat__in"><p class="">Чередуйте сфокусированную работу и короткие перерывы. Планирование слотов заодно снимает ощущение, что вы бездельничаете: темп держится, но вы не выдыхаетесь к обеду.</p></div></div>
+<div class="beat" data-pos="tl"><div class="beat__in"><p class="punch">Логика простая. Работаем час, делаем десять-пятнадцать минут перерыва, повторяем цикл. И так до конца смены.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="">Ради побочного эффекта всё и затевается: внутри одного дня появляется несколько внутренних дедлайнов. Мелкие дела можно раскидать по слотам, а можно собрать в один и закрыть до начала следующего перерыва.</p></div></div>
+<div class="beat beat--stage" data-stage="board" data-name="График вахты" data-scene="scene-board" data-bright="0.141">  <div class="stage">    <p class="stage__intro">Разложите магниты по сетке с 9:00 до 18:00 и запустите смену. Час без перерыва роняет точность, соседство разнотипных задач стоит времени на разогрев, в 14:20 прилетает аварийный вызов. Проигрыш — закончить в 21:00, даже если сделали всё.</p>    <div class="stage__play" data-play="board"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="board" hidden></div>
+</section>
+
+<section class="block " id="b6" data-n="6" data-time="12:00"
+  data-title="Выгрузи задачи из головы" data-bright="0.165" style="--bg:url('assets/bg-05-log.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">12:00</span><span class="hero__num">Приём 5 из 16</span><span class="hero__kelvin">2700 K</span></p>
+      <h2 class="hero__title">Выгрузи задачи из головы</h2>
+      <p class="hero__lead">Слоты есть. Теперь то, чем вы их наполняете.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Рация оживает каждые полминуты. База передаёт заявки быстрее, чем вы успеваете дописать предыдущую. Кажется, что-то забыли. Вроде всё сделали. И всё равно кажется.</p></div></div>
+<div class="beat" data-pos="b"><div class="beat__in"><p class="">Приучите себя пользоваться планировщиком или трекером. Держать всё в голове — плохая идея: это занимает оперативную память, и есть риск забыть про задачу целиком или про её детали.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="punch">Когда параллельных дел много, учёт становится регулярной работой, а не разовым порывом.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><div class="cards">
+    <div class="card"><b>Clickup</b><span>сам собирает расписание из задач со сроками. Работает только с ВПН</span></div>
+    <div class="card"><b>Weeek</b><span>то же самое, чуть менее гибко. Бесплатный, без ВПН</span></div>
+    <div class="card"><b>Google-календарь</b><span>плюс виджет на рабочий стол. Задачи создаются голосом</span></div>
+  </div></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><aside class="note"><img class="note__face" src="assets/char-chief-face-idle.png" alt="Начальство" loading="lazy"><div class="note__text"><b>Начальство</b>Я веду задачи подробно: подзадачи, комментарии, ссылки. Всегда видно, что на каком этапе и почему стоит. Контакты, файлы и референсы лежат в одном месте и достаются даже спустя годы.</div></aside></div></div>
+<div class="beat beat--stage" data-stage="log" data-name="Вахтенный журнал" data-scene="scene-log-desk" data-bright="0.169">  <div class="stage">    <p class="stage__intro">Записать в журнал — клик и пара секунд. Оставить в голове — бесплатно и мгновенно. В голове четыре места; пятая задача выбивает предыдущую, а оставшиеся затягивает инеем: сначала теряются детали, потом задача целиком.</p>    <div class="stage__play" data-play="log"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="log" hidden></div>
+</section>
+
+<section class="block pause" id="b7" data-n="7" data-time="13:00"
+  data-title="Обед" data-bright="0.263" style="--bg:url('assets/bg-06-outside.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">13:00</span><span class="hero__kelvin">сияние</span></p>
+      <h2 class="hero__title">Обед</h2>
+      <p class="hero__lead">Половина смены позади. Курс уходит на перерыв вместе с вами.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Вы открываете наружную дверь, и в лицо бьёт минус сорок. Над станцией стоит зелёная стена света. Ради одного этого стоило сюда ехать.</p></div></div>
+<div class="beat" data-pos="tr"><div class="beat__in"><p class="punch">Примерно <b class="hl">раз в час</b> имеет смысл делать осознанный перерыв. Пройтись по комнате, выйти во двор, потрогать траву — если она у вас есть.</p></div></div>
+<div class="beat" data-pos="l"><div class="beat__in"><p class="punch">Эта страница не пустит вас дальше минуту. Встаньте из-за стола. Курс подождёт.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><div class="timer" data-seconds="60"><div class="timer__ring"><span class="timer__num">60</span></div></div></div></div>
+</section>
+
+<section class="block " id="b8" data-n="8" data-time="14:00"
+  data-title="Спланируй неделю и оставь запас" data-bright="0.204" style="--bg:url('assets/bg-07-supply.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">14:00</span><span class="hero__num">Приём 6 из 16</span><span class="hero__kelvin">2700 K</span></p>
+      <h2 class="hero__title">Спланируй неделю и оставь запас</h2>
+      <p class="hero__lead">Вернулись. Поднимаемся на уровень выше одного дня.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">На складе всё расписано до весны. Солярка, крупа, запчасти. Тот, кто считал эти ящики, знал главное правило зимовки: последний ящик не трогают до последнего дня.</p></div></div>
+<div class="beat" data-pos="t"><div class="beat__in"><p class="">Чтобы видеть динамику и эффект своей работы, планируйте. Обозначьте крупные приоритеты на год, продумайте подзадачи, разложите их по кварталам и месяцам.</p></div></div>
+<div class="beat" data-pos="r"><div class="beat__in"><p class="">Раз в неделю разбирайте сделанное и планируйте следующую. Занимаясь этим регулярно, вы научитесь точно прогнозировать загрузку и поймёте, сколько продукта объективно способны выдать за неделю в нормальном режиме.</p></div></div>
+<div class="beat" data-pos="tl"><div class="beat__in"><p class="">Не забивайте слоты под завязку. Оставляйте <b><b class="hl">10–15 %</b></b> рабочего времени каждого дня свободными — на форс-мажоры, неожиданные созвоны и срочные поручения.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="punch">С месяцем так же: в конце подбиваете итоги и планируете новый. Из этой привычки вытекает следующий приём.</p></div></div>
+</section>
+
+<section class="block " id="b9" data-n="9" data-time="15:00"
+  data-title="Сложи похожее в один день" data-bright="0.188" style="--bg:url('assets/bg-08-shelves.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">15:00</span><span class="hero__num">Приём 7 из 16</span><span class="hero__kelvin">5000 K</span></p>
+      <h2 class="hero__title">Сложи похожее в один день</h2>
+      <p class="hero__lead">Список дел на неделю есть. Теперь важно, в каком порядке он ляжет на дни.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">На складских полках всё лежит по типам: крепёж к крепежу, кабель к кабелю. Никто не додумался ставить банку тушёнки между двумя мотками провода. С задачами почему-то додумываются постоянно.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="">Раскидайте задачи по дням так, чтобы похожие приходились на один день. День для созвонов. День для креатива и насмотренности. День для текстов. День для разбора работы команды.</p></div></div>
+<div class="beat" data-pos="b"><div class="beat__in"><p class="">Сгруппированные так задачи идут легче: в течение дня вы настраиваетесь на определённый ритм и вайб и не тратите время на переключение, вспоминание и эмоциональный настрой.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><div class="cards">
+    <div class="card"><b>Понедельник</b><span>созвоны и согласования</span></div>
+    <div class="card"><b>Вторник</b><span>тексты и отчёты</span></div>
+    <div class="card"><b>Среда</b><span>креатив и насмотренность</span></div>
+  </div></div></div>
+</section>
+
+<section class="block " id="b10" data-n="10" data-time="15:30"
+  data-title="Разгреби занос" data-bright="0.227" style="--bg:url('assets/bg-09-drift.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__part">Часть вторая · Как решать вопросики</p>      <p class="hero__meta"><span class="hero__time">15:30</span><span class="hero__num">Приём 8 из 16</span><span class="hero__kelvin">4000 K</span></p>
+      <h2 class="hero__title">Разгреби занос</h2>
+      <p class="hero__lead">Бывают задачи приятные, бывают неприятные. Дальше — про вторые.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">За ночь намело. Дверь открывается на ладонь, дальше упирается в плотный снег. Разгрести — сорок минут. Не разгребать — тоже вариант: до вечера дверь ещё как-то открывается.</p></div></div>
+<div class="beat" data-pos="bl"><div class="beat__in"><p class="">Есть очень хороший способ справляться с задачами, которые неприятны сами по себе. Начните день именно с неё: сделайте <b class="hl">первым делом</b>, а уже потом переходите к остальному.</p></div></div>
+<div class="beat" data-pos="tr"><div class="beat__in"><p class="punch">Приём при всей лобовой простоте работает удивительно хорошо и даёт мощный эффект высвобождения, когда вы закрываете то, что долго откладывали.</p></div></div>
+<div class="beat" data-pos="l"><div class="beat__in"><p class="">Если неприятных задач много — раскидайте их по дням так, чтобы решать <b class="hl">по одной в день</b>. Вы удивитесь, насколько мало их окажется и как быстро они решаются.</p></div></div>
+<div class="beat beat--stage" data-stage="drift" data-name="Утренний занос" data-scene="scene-vestibule" data-bright="0.169">  <div class="stage">    <p class="stage__intro">Разгрести можно сразу — минута работы. Можно отложить и заняться приятным. Каждый отложенный час сугроб растёт, отъедает свет из щели и загораживает интерфейс: остальные дела идут медленнее.</p>    <div class="stage__play" data-play="drift"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="drift" hidden></div>
+</section>
+
+<section class="block " id="b11" data-n="11" data-time="16:00"
+  data-title="Дай слово" data-bright="0.204" style="--bg:url('assets/bg-18-hail.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">16:00</span><span class="hero__num">Приём 9 из 16</span><span class="hero__kelvin">2400 K</span></p>
+      <h2 class="hero__title">Дай слово</h2>
+      <p class="hero__lead">Способ поднять мотивацию, когда её нет совсем.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Тангента в руке весит граммов двести. Пока вы её не нажали, всё, что вы себе пообещали, остаётся между вами и вами. После — уже нет.</p></div></div>
+<div class="beat" data-pos="br"><div class="beat__in"><p class="">Дайте слово другому человеку или группе людей. Проговорите, что сделаете и в какие сроки. Всё, <b class="hl">мосты сожжены</b>: вероятность выполнения в оговорённый срок резко вырастает.</p></div></div>
+<div class="beat" data-pos="t"><div class="beat__in"><p class="punch">Приём работает тем сильнее, чем важнее для вас те, кому вы дали слово. Лучше всего — люди, которые вам нравятся.</p></div></div>
+<div class="beat beat--stage" data-stage="radio" data-name="Выйди на связь" data-scene="scene-mic-closeup" data-bright="0.216">  <div class="stage">    <p class="stage__intro">Назовите срок вслух и выберите, кто это услышит. Шансы меняются на глазах. На выходе — готовый текст обещания, который можно скопировать и правда отправить.</p>    <div class="stage__play" data-play="radio"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="radio" hidden></div>
+</section>
+
+<section class="block " id="b12" data-n="12" data-time="16:30"
+  data-title="Назначь заклятого врага" data-bright="0.22" style="--bg:url('assets/bg-10-mast.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">16:30</span><span class="hero__num">Приём 10 из 16</span><span class="hero__kelvin">прожектор</span></p>
+      <h2 class="hero__title">Назначь заклятого врага</h2>
+      <p class="hero__lead">Ультимативная мера для задач, которые бесят.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Антенну сковало льдом ещё позавчера. Связи нет. Пока её нет, всё остальное на станции не имеет смысла — ни отчёты, ни заявки, ни планы.</p></div></div>
+<div class="beat" data-pos="tl"><div class="beat__in"><p class="punch">Суть в том, что вы делаете целенаправленно только её. Столько времени, сколько потребуется. Все остальные рабочие процессы ставятся на стоп.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="punch">Так вы создаёте ситуацию, в которой не можете приступить к другим важным, интересным и любимым делам, пока не выполните то, что откладывали.</p></div></div>
+<div class="beat beat--stage" data-stage="mast" data-name="Мачта" data-scene="scene-mast-night" data-bright="0.188">  <div class="stage">    <p class="stage__intro">Полторы минуты. Все остальные задачи висят под замками. Удары — интервалы фокуса; каждое принятое отвлечение возвращает лёд обратно.</p>    <div class="stage__play" data-play="mast"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="mast" hidden></div>
+</section>
+
+<section class="block " id="b13" data-n="13" data-time="17:00"
+  data-title="Подбери фон" data-bright="0.114" style="--bg:url('assets/bg-11-ether.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">17:00</span><span class="hero__num">Приём 11 из 16</span><span class="hero__kelvin">2200 K</span></p>
+      <h2 class="hero__title">Подбери фон</h2>
+      <p class="hero__lead">Отдельная порода дел — не страшные, а тупо монотонные.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Восемь столбцов метеоданных надо переписать в бланк от руки. Тишина в радиорубке такая, что слышно, как гудит лампа. Через десять минут вы начнёте засыпать.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="punch">Если механическая работа для вас скучна и превращается в испытание, поставьте что-нибудь на фон. Но выбор фона решает всё.</p></div></div>
+<div class="beat" data-pos="bl"><div class="beat__in"><p class="">Он должен быть достаточно плотным, чтобы забить тишину и развлекать, — и достаточно скучным или безразличным вам по теме, чтобы вы не начали его смотреть.</p></div></div>
+<div class="beat" data-pos="tr"><div class="beat__in"><p class="punch">Не подходит то, что нужно смотреть или что активно завладевает вниманием. Нужно то, что можно только слушать.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><div class="two-lists">
+    <div class="list good"><h4>Подходит</h4><ul>
+      <li>Обзоры на книги</li><li>Разборы фильмов</li>
+      <li>Конспирологи — почти любые</li><li>Турецкие сериалы про любовь</li>
+      <li>Стримы «учимся вместе»</li><li>Подкасты по скучным темам</li>
+      <li>Рассказы о космосе и истории</li></ul></div>
+    <div class="list bad"><h4>Не подходит</h4><ul>
+      <li>Летсплеи и стримы по играм</li><li>Клипы и музыка</li>
+      <li>Аниме</li><li>Художественные и документальные фильмы</li>
+      <li>Рилсы, шортсы, тиктоки</li><li>Обзоры техники и распаковки</li></ul></div>
+  </div></div></div>
+<div class="beat beat--stage" data-stage="ether" data-name="Эфир" data-scene="scene-radio-room" data-bright="0.192">  <div class="stage">    <p class="stage__intro">Та самая нудная работа три раза: в тишине, под захватывающий фон и под скучный. Курс считает вашу скорость и ошибки — список выше вы соберёте из собственных цифр.</p>    <div class="stage__play" data-play="ether"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="ether" hidden></div>
+</section>
+
+<section class="block " id="b14" data-n="14" data-time="17:30"
+  data-title="Награди себя" data-bright="0.165" style="--bg:url('assets/bg-12-ration.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">17:30</span><span class="hero__num">Приём 12 из 16</span><span class="hero__kelvin">2700 K</span></p>
+      <h2 class="hero__title">Награди себя</h2>
+      <p class="hero__lead">Последнее рабочее правило — про то, что бывает после задачи.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">В шкафчике под замком стоят три банки сгущёнки и плитка шоколада. Ключ есть. Замок открывается легко. Вопрос только в том, за что вы его открываете.</p></div></div>
+<div class="beat" data-pos="l"><div class="beat__in"><p class="">Хвалите и награждайте себя за успешно закрытую задачу. Организм нужно приучить выделять эндорфины на закрытие: сделал что-то — закинулся вкусненьким, сделал ещё одну — полистал ленту.</p></div></div>
+<div class="beat" data-pos="br"><div class="beat__in"><p class="punch">Не разрывайте эту связь. Награда — <b>только</b> за выполненную задачу, а не просто так.</p></div></div>
+<div class="beat beat--stage" data-stage="ration" data-name="Неприкосновенный запас" data-scene="scene-ration-locker" data-bright="0.114">  <div class="stage">    <p class="stage__intro">Шкаф открывается, только если в него бросить закрытую задачу. Нажмите просто так — убедитесь.</p>    <div class="stage__play" data-play="ration"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="ration" hidden></div>
+</section>
+
+<section class="block " id="b15" data-n="15" data-time="18:00"
+  data-title="Закрой вахту" data-bright="0.133" style="--bg:url('assets/bg-13-switch.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">18:00</span><span class="hero__kelvin">5000 → 2700 K</span></p>
+      <h2 class="hero__title">Закрой вахту</h2>
+      <p class="hero__lead">Восемнадцать ноль-ноль. Смена закончена — и это не фигура речи.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Рубильник щёлкает сухо, как выключатель в пустом коридоре. Холодный свет над столом гаснет, остаётся тёплая лампа над койкой. Станция переходит в ночной режим.</p></div></div>
+<div class="beat" data-pos="r"><div class="beat__in"><p class="punch">День закончился. Компьютер уже недоступен, рабочие приложения не открыть. Как если бы вы уехали из офиса.</p></div></div>
+<div class="beat" data-pos="tl"><div class="beat__in"><p class="">Если рука тянется глянуть одним глазом — ради этого мы и ставили границу в первом приёме. Дальше идут четыре приёма про вечер, и они такая же часть работы, как всё, что было до шести.</p></div></div>
+</section>
+
+<section class="block " id="b16" data-n="16" data-time="вечер"
+  data-title="Отдыхай наоборот" data-bright="0.224" style="--bg:url('assets/bg-14-mess.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__part">Часть третья · Как не сгорать</p>      <p class="hero__meta"><span class="hero__time">вечер</span><span class="hero__num">Приём 13 из 16</span><span class="hero__kelvin">2700 K</span></p>
+      <h2 class="hero__title">Отдыхай наоборот</h2>
+      <p class="hero__lead">Смена закрыта. Оказывается, отдыхать тоже можно неправильно.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">В кают-компании горит одна лампа. На столе — кружка, книга и никакой работы. Вы садитесь и через сорок минут понимаете, что не отдохнули совсем.</p></div></div>
+<div class="beat" data-pos="b"><div class="beat__in"><p class="">Эффективный отдых — не всегда то, что мы привыкли под ним понимать. Сон, игры и фильмы не восстановят энергию, если вы и так ведёте малоподвижный образ жизни.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="">Отдых предполагает смену вида деятельности <b class="hl">на полярную</b> относительно той, от которой вы устали. Если весь день вы заняты очень ответственной малоподвижной работой, для отдыха лучше подойдёт что-нибудь безответственное и максимально подвижное.</p></div></div>
+<div class="beat" data-pos="bl"><div class="beat__in"><p class="punch">Это похоже на две чаши весов. Уставая, вы перегружаете одну сторону. Наиболее производительным станете при достижении баланса.</p></div></div>
+<div class="beat beat--stage" data-stage="scales" data-name="Весы" data-scene="scene-mess-table" data-bright="0.18">  <div class="stage">    <p class="stage__intro">Слева ложится сегодняшняя смена, справа вы выбираете отдых. Сон и сериал после сидячего дня чашу не поднимают — поднимает только полярное.</p>    <div class="stage__play" data-play="scales"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="scales" hidden></div>
+</section>
+
+<section class="block " id="b17" data-n="17" data-time="вечер"
+  data-title="Меняй обстановку" data-bright="0.235" style="--bg:url('assets/bg-15-passage.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">вечер</span><span class="hero__num">Приём 14 из 16</span><span class="hero__kelvin">4000 K</span></p>
+      <h2 class="hero__title">Меняй обстановку</h2>
+      <p class="hero__lead">Один вечер вы разгрузили. Теперь про то, что держит в тонусе месяцами.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Между модулями натянут крытый переход. Сорок шагов по скрипучему настилу — и вы в другом помещении, с другим светом и другим запахом. Иногда этих сорока шагов достаточно, чтобы голова заработала заново.</p></div></div>
+<div class="beat" data-pos="tr"><div class="beat__in"><p class="punch">Все приёмы работают лучше при чередовании. Чтобы не закисать, время от времени выбирайтесь поработать в коворкинг, в кофейню или просто на природу.</p></div></div>
+<div class="beat" data-pos="l"><div class="beat__in"><p class="punch">Чередуйте способы справляться с задачами, подбирайте разные скины в качестве рабочей одежды.</p></div></div>
+<div class="beat" data-pos="l"><div class="beat__in"><p class="">Скука приходит туда, где нет разнообразия. Подойдите к вопросу творчески: ваша задача — сохранить огонь в глазах и интерес к профессии и пронести его через годы.</p></div></div>
+</section>
+
+<section class="block " id="b18" data-n="18" data-time="вечер"
+  data-title="Делай паузы" data-bright="0.255" style="--bg:url('assets/bg-19-porch.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">вечер</span><span class="hero__num">Приём 15 из 16</span><span class="hero__kelvin">сияние</span></p>
+      <h2 class="hero__title">Делай паузы</h2>
+      <p class="hero__lead">Про это уже было в обед. Скажем ещё раз — потому что забывают именно это.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">На крыльце три ступени и сорок секунд ходьбы до угла модуля. Люди, зимующие по году, выходят сюда по десять раз в день. Не потому, что там красиво, а потому что иначе не выдержать.</p></div></div>
+<div class="beat" data-pos="t"><div class="beat__in"><p class="">Не забывайте отдыхать в течение рабочего дня. Примерно <b class="hl">раз в час</b> делайте осознанные перерывы: пройдитесь по комнате, выйдите во двор, потрогайте траву.</p></div></div>
+<div class="beat" data-pos="r"><div class="beat__in"><p class="punch">Такой подход позволяет сохранить бодрость на весь день — и это единственный приём, который стоит почти ноль и работает сразу.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><aside class="note"><img class="note__face" src="assets/char-dog-sit.png" alt="Пёс станции" loading="lazy"><div class="note__text"><b>Пёс станции</b>Я, между прочим, выхожу двенадцать раз в день. И выгляжу отлично.</div></aside></div></div>
+</section>
+
+<section class="block " id="b19" data-n="19" data-time="выходные"
+  data-title="Впиши личные цели" data-bright="0.239" style="--bg:url('assets/bg-16-wall.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">выходные</span><span class="hero__num">Приём 16 из 16</span><span class="hero__kelvin">2400 K</span></p>
+      <h2 class="hero__title">Впиши личные цели</h2>
+      <p class="hero__lead">Остался последний приём — и он не про работу.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">На стене кают-компании висит план зимовки. Выходы, замеры, ремонты, рейсы. В нём расписан каждый месяц до весны — и ни строчки о том, что человек, который всё это выполнит, тоже живёт.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="">Чтобы следить за балансом и избегать перекосов в сторону работы или, наоборот, личной жизни, закиньте в планировщик не только профессиональные, но и личные цели.</p></div></div>
+<div class="beat" data-pos="b"><div class="beat__in"><p class="punch">Время от времени возвращайтесь к ним и смотрите, как двигается эта часть жизни.</p></div></div>
+<div class="beat" data-pos="b"><div class="beat__in"><p class="punch">Так перекос видно вовремя — в любую из двух сторон.</p></div></div>
+<div class="beat beat--stage" data-stage="plan" data-name="Распорядок вахты" data-scene="scene-plan-table" data-bright="0.427">  <div class="stage">    <p class="stage__intro">Заполняемый бланк: часы, слоты, перерывы, дни по типам, запас, награда и три личные цели. Валидатор спорит: десять часов работы без перерывов не примет, ноль личных целей попросит дописать. На выходе — файл для календаря и напоминание на три месяца вперёд.</p>    <div class="stage__play" data-play="plan"></div>    <p class="stage__hint" data-hint="1">Играйте прямо здесь — курс продолжится сам</p>  </div></div>
+<div class="beat beat--res" data-res="plan" hidden></div>
+</section>
+
+<section class="block final" id="b20" data-n="20" data-time="через 3 месяца"
+  data-title="Вернись и сравни" data-bright="0.412" style="--bg:url('assets/bg-17-sunrise.jpg')">
+  <div class="block__bg"><i class="block__swap"></i></div>
+  <div class="beat beat--title">
+    <div class="beat__in">
+      <p class="hero__meta"><span class="hero__time">через 3 месяца</span><span class="hero__kelvin">первое солнце</span></p>
+      <h2 class="hero__title">Вернись и сравни</h2>
+      <p class="hero__lead">Полярная ночь длится примерно столько же, сколько нужно, чтобы приём стал вашим.</p>
+    </div>
+  </div>
+<div class="beat" data-pos="c"><div class="beat__in"><p class="big">Двадцать третьего числа над горизонтом появляется полоска света. Она держится семь минут и снова уходит. Но все на станции знают: с этого дня считается по-другому.</p></div></div>
+<div class="beat" data-pos="bl"><div class="beat__in"><p class="punch">Это всё. Шестнадцать приёмов, которые заметно улучшают работу на удалёнке.</p></div></div>
+<div class="beat" data-pos="tr"><div class="beat__in"><p class="">Выберите несколько и осознанно применяйте минимум <b class="hl">три месяца</b>. Потом вернитесь и посмотрите на разницу — в самочувствии, в количестве и в качестве закрытых задач.</p></div></div>
+<div class="beat" data-pos="c"><div class="beat__in"><div class="checklist"><p class="checklist__title">Что берёте с собой</p><ul><li><label><input type="checkbox"><span>Границы смены</span></label></li><li><label><input type="checkbox"><span>Отдельное место и холодный свет</span></label></li><li><label><input type="checkbox"><span>Одежда, в которой можно выйти</span></label></li><li><label><input type="checkbox"><span>Слоты по часу</span></label></li><li><label><input type="checkbox"><span>Трекер вместо головы</span></label></li><li><label><input type="checkbox"><span>Запас 10–15 %</span></label></li><li><label><input type="checkbox"><span>Похожее в один день</span></label></li><li><label><input type="checkbox"><span>Неприятная задача с утра</span></label></li><li><label><input type="checkbox"><span>Слово вслух</span></label></li><li><label><input type="checkbox"><span>Заклятый враг</span></label></li><li><label><input type="checkbox"><span>Фон, который можно только слушать</span></label></li><li><label><input type="checkbox"><span>Награда за результат</span></label></li><li><label><input type="checkbox"><span>Отдых наоборот</span></label></li><li><label><input type="checkbox"><span>Смена обстановки</span></label></li><li><label><input type="checkbox"><span>Паузы раз в час</span></label></li><li><label><input type="checkbox"><span>Личные цели в плане</span></label></li></ul></div></div></div>
+</section>
+
+</main>
+
+<script src="sound.js"></script>
+<script src="fx.js"></script>
+<script src="game.js"></script>
+<script src="course.js"></script>
+</body>
+</html>
